@@ -1,7 +1,6 @@
 #imports
 from tkinter import *
 import random
-from tkinter import filedialog
 
 qs3=['How is Carry Minati','Father of Aurengzeb','Where was the battle of Panipath Fought']
 qs2=['How many layers does the earth have','What is latitude','What is longitude','What is a Pleateau']
