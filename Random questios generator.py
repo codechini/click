@@ -2,6 +2,10 @@
 from tkinter import *
 import random
 from tkinter import filedialog
+
+qs3=['How is Carry Minati','Father of Aurengzeb','Where was the battle of Panipath Fought']
+qs2=['How many layers does the earth have','What is latitude','What is longitude','What is a Pleateau']
+qs1=['Explain GNU','WHat is LAMP','']
 qs=['What is DBMS','What are algorithms','creppers _____']
 subject=["math","science","geography","history"]
 
@@ -17,16 +21,19 @@ b1.set('click here')
 
 
 #Function
-def question():
+def question(qs):
     rad_qs=random.choice(qs)
     n=len(qs)
     print(rad_qs)
 def sel1(event):
-    label=Label(root,text=b1.get()).pack()
     if b1.get()=='math':
-        label=Label(root,text=question()).pack()
+        label=Label(root,text=question(qs)).pack()
     elif b1.get()=='science':
-        label = Label(root, text=b1.get()).pack()
+        label = Label(root, text=question(qs1)).pack()
+    elif b1.get() == 'geography':
+        label = Label(root, text=question(qs2)).pack()
+    elif b1.get()=='history':
+        label = Label(root, text=question(qs3)).pack()
     else:
         print('no details found on the subject')
 
