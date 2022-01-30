@@ -91,7 +91,7 @@
         </div>
     </nav>
     <main>
-        <div class="container-fluid bg-dark ">
+        <div class="container-fluid bg-dark h-100">
             <div class="row ">
                 <div class="col mx-1  lavender">
                     <p class="text-white ">
@@ -206,7 +206,7 @@
                                 </div>
                             </div>
                             <div class="col-auto">
-                                <button type="submit" class="btn btn-outline-light mb-4" v-on:click="greet">Mail</button>
+                                <button type="submit" class="btn btn-outline-light mb-4 opacity-80" v-on:click="mail_popup">Mail</button>
                             </div>
                         </div>
                     </form>
@@ -269,16 +269,16 @@
     </script>
     <script>
         /*Email.send({
-                                                                                                                                                                                                                                                                                                                    Host: "smtp.Codechini.com",
-                                                                                                                                                                                                                                                                                                                    Username: "Codechini",
-                                                                                                                                                                                                                                                                                                                    Password: "Hema18Venu",
-                                                                                                                                                                                                                                                                                                                    To: 'arangathvenuchinmay@gmail.com',
-                                                                                                                                                                                                                                                                                                                    From: "you@isp.com",
-                                                                                                                                                                                                                                                                                                                    Subject: "subject here",
-                                                                                                                                                                                                                                                                                                                    Body: "body text"
-                                                                                                                                                                                                                                                                                                                }).then(
-                                                                                                                                                                                                                                                                                                                    message => alert(message)
-                                                                                                                                                                                                                                                                                                                );*/
+                                                                                                                                                                                                                                                                                                                                            Host: "smtp.Codechini.com",
+                                                                                                                                                                                                                                                                                                                                            Username: "Codechini",
+                                                                                                                                                                                                                                                                                                                                            Password: "Hema18Venu",
+                                                                                                                                                                                                                                                                                                                                            To: 'arangathvenuchinmay@gmail.com',
+                                                                                                                                                                                                                                                                                                                                            From: "you@isp.com",
+                                                                                                                                                                                                                                                                                                                                            Subject: "subject here",
+                                                                                                                                                                                                                                                                                                                                            Body: "body text"
+                                                                                                                                                                                                                                                                                                                                        }).then(
+                                                                                                                                                                                                                                                                                                                                            message => alert(message)
+                                                                                                                                                                                                                                                                                                                                        );*/
         function mailin() {}
     </script>
 </body>
