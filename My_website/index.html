@@ -62,6 +62,44 @@
         .my_yellow {
             background-color: rgb(255, 255, 72);
         }
+        
+        .vt {
+            vertical-align: middle;
+        }
+        
+        #btn-back-to-top {
+            position: fixed;
+            bottom: 10px;
+            right: 15px;
+            display: none;
+        }
+        
+        .btn-circle.btn-sm {
+            width: 30px;
+            height: 30px;
+            padding: 6px 0px;
+            border-radius: 15px;
+            font-size: 8px;
+            text-align: center;
+        }
+        
+        .btn-circle.btn-md {
+            width: 50px;
+            height: 50px;
+            padding: 7px 10px;
+            border-radius: 25px;
+            font-size: 10px;
+            text-align: center;
+        }
+        
+        .btn-circle.btn-xl {
+            width: 70px;
+            height: 70px;
+            padding: 10px 16px;
+            border-radius: 35px;
+            font-size: 12px;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -91,74 +129,41 @@
         </div>
     </nav>
     <main>
-        <div class="container-fluid bg-dark h-100">
-            <div class="row ">
-                <div class="col mx-1  lavender">
-                    <p class="text-white ">
-                        <i>Section 1<br> Here is list of things i want to put in this section for my website out of the to see if it leaks out of the the section in an desperate attempt to see restults of the happening in reality oh! ,my bad i'm using live server
-                            it's gonna be instantaneous but let me try to push it's limits by adding more and more junk in it , let me just copy paste an article in here <br> Java is fast, reliable and secure. From desktop to web applications, scientific supercomputers to gaming consoles, cell phones to the Internet, Java is used in every nook and corner.<img src="Images\Penguins.jpg" class="img-fluid" alt="Responsive image"><br>
-                            Java is easy to learn and its syntax is simple and easy to understand. It is based on C++ (so easier for programmers who know C++). Java has removed many confusing and rarely-used features e.g. explicit pointers, operator overloading etc. Java also takes care of memory management and for that, it provides an automatic garbage collector. This collects the unused objects automatically.
-                        </i>
-                    </p>
-                    <!--<div class="col-md-auto"></div>-->
-                </div>
-                <div class="col-5 ">
-                    <!--<p class="text-white text-align-center">1,2</p>-->
-                    <div class="row ">
-                        <div class="col mx-1 lavender">
-                            <p class="text-white ">Section 2<br><img src="Images\Jellyfish.jpg" class="img-fluid " alt="Responsive image">
-
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row ">
-                        <div class="col mx-1 my-1 my_yellow">
-                            <p class="text-dark ">Section 3<br> The art of baking a cake is the the true skill of patience and temprament
-                            </p>
-                        </div>
-                        <div class="col mx-1 my_red">
-                            <p class="text-white ">Section 4<br><img src="Images\Jellyfish.jpg" class="img-fluid " alt="Responsive image">
-
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
+        <div class="container-fluid bg-image img-fluid d-flex" style="background-image: url('https://images.unsplash.com/photo-1555231955-348aa2312e19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');height: 100vh; max-width: 100%; background-repeat: no-repeat;background-size: cover;">
+            <div class="col-8 justify-content-center align-self-center" style="overflow: auto; text-align:start; color: rgb(200, 78, 89);font-size: large;max-width: 100%; max-height:50%">
+                <p>Lorem ipsum dolor sit amet. Et impedit repellendus est ipsa illum et quia galisum rem minima repellat ut consequatur quibusdam. Ut galisum saepe ut nostrum illum est nemo nesciunt quo eligendi inventore a voluptatem nostrum non velit omnis
+                    sit autem nihil! Qui excepturi </p>
+                <p>ea ullam nihil et illo veniam quo autem nesciunt aut dolorem internos qui fuga necessitatibus. Et galisum consectetur quo odit accusantium et similique harum et necessitatibus pariatur rem aperiam vitae qui fuga quam. Et reiciendis maiores
+                    ex dolorem iusto sed molestiae internos ut fugit eaque aut odio excepturi.</p>
             </div>
-
-            <div class="row">
-                <div class="col  mx-1 lime">
-                    <p class="text-dark ">Section 5<br>
-                        <img src="Images\c1.jpg" alt="c1" class="img-fluid">This is me but it is also me aaahhh at the end of the day it is still me let's see what happens when we try to write some nonsense into it will it overflow or not maybe overlap
-                        the image but we need some more of this to see it does work or not
-                    </p>
-                </div>
-                <div class="col-7">
-                    <!--<p class="text-white text-align-center">6</p>-->
-                    <div class="row">
-                        <div class="col mx-1 blue">
-                            <p class="text-white r">Section 6<br> Here is list of things i want to put in this section for my website out of the to see if it leaks out of the the section in an desperate attempt to see restults of the happening in reality oh! ,my bad i'm using
-                                live server it's gonna be instantaneous but let me try to push it's limits by adding more and more junk in it , let me just copy paste an article in here <br> Java is fast, reliable and secure. From desktop to web applications,
-                                scientific supercomputers to gaming consoles, cell phones to the Internet, Java is used in every nook and corner.<img src="Images\Penguins.jpg" class="img-fluid" alt="Responsive image"><br>
-                            </p>
-                        </div>
-                        <div class="col mx-1 blue">
-                            <p class="text-white ">Section 7
-                                <img src="Images\c2.jpg" alt="c1" class="img-fluid">This is me but it is also me aaahhh at the end of the day it is still me lrt see what happens when we try to write some nonsense into it will it overflow or not maybe
-                                overlap the image but we need some more of ths to see it does work or not</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col mx-1 blue">
-                            <p class="text-white ">Section 8</p>
-                        </div>
-                        <div class="col mx-1 blue">
-                            <p class="text-white ">Section 9<img src="Images\jake-weirick-wWZra5Zs6bg-unsplash.jpg" class="img-fluid" alt="Responsive image"></p>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-1 justify-content-center align-self-center" style=" text-align:start; color: rgb(200, 78, 89);font-size: large;max-width: 100%; ">
+                <img src="https://img.icons8.com/ios/2x/half-heart--v2.png" alt="">
             </div>
         </div>
+
+
+
+
+        <div class="container-fluid bg-image img-fluid d-flex" style="background-image: url('https://c4.wallpaperflare.com/wallpaper/44/415/577/minimalist-winter-art-snow-wallpaper-preview.jpg');height: 100vh; max-width: 100%; background-repeat: no-repeat;background-size: cover;">
+            <div class="col-4 justify-content-center align-self-center" style="text-align:start; color: rgb(200, 78, 89);font-size: large;max-width: 100%; max-height:50%">
+                <img src="https://img.icons8.com/ios/2x/half-heart--v2.png" alt="">
+            </div>
+            <div class="col-8 justify-content-center align-self-center" style="overflow: auto;  text-align:start; color: rgb(85, 136, 253);font-size: large;max-width: 100%;max-height:50% ">
+                <p>Lorem ipsum dolor sit amet. Et impedit repellendus est ipsa illum et quia galisum rem minima repellat ut consequatur quibusdam. Ut galisum saepe ut nostrum illum est nemo nesciunt quo eligendi inventore a voluptatem nostrum non velit omnis
+                    sit autem nihil! Qui excepturi </p>
+                <p>ea ullam nihil et illo veniam quo autem nesciunt aut dolorem internos qui fuga necessitatibus. Et galisum consectetur quo odit accusantium et similique harum et necessitatibus pariatur rem aperiam vitae qui fuga quam. Et reiciendis maiores
+                    ex dolorem iusto sed molestiae internos ut fugit eaque aut odio excepturi.</p>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
         <footer class="bg-dark text-center text-white">
             <div class="container p-4">
                 <section class="mb-4">
@@ -210,6 +215,7 @@
                             </div>
                             <div class="col-auto">
                                 <button type="submit" class="btn btn-outline-light mb-4 " v-on:click="mail_popup">Mail</button>
+                                <a class="btn btn-primary" href="contact_form.html">Mail</a>
                             </div>
                         </div>
                     </form>
@@ -263,6 +269,12 @@
                     </div>
                 </section>
             </div>
+
+            <button type="button" class="btn btn-light btn-circle btn-md" id="btn-back-to-top">
+                
+                <img src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/2x/external-up-arrows-kmg-design-glyph-kmg-design.png" width="15" alt="">
+             </button>
+
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
                 © 2020 Copyright:
                 <a class="text-white" href="https://sjv0sco7dpk39kg0btdxnw-on.drv.tw/www.Codechini.com/">Codechini.com</a>
@@ -274,6 +286,30 @@
     <script src="https://smtpjs.com/v3/smtp.js">
     </script>
     <script>
+        let mybutton = document.getElementById("btn-back-to-top");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (
+                document.body.scrollTop > 20 ||
+                document.documentElement.scrollTop > 20
+            ) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        // When the user clicks on the button, scroll to the top of the document
+        mybutton.addEventListener("click", backToTop);
+
+        function backToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
     </script>
 </body>
 
