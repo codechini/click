@@ -100,29 +100,78 @@
             font-size: 12px;
             text-align: center;
         }
+        
+        .link {
+            cursor: pointer;
+            font-size: 18px;
+            position: relative;
+            white-space: nowrap;
+            color: var(--color-text);
+        }
+        
+        .link::before,
+        .link::after {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: currentColor;
+            top: 100%;
+            left: 0;
+            pointer-events: none;
+        }
+        
+        .link::before {
+            content: '';
+            /* show by default */
+        }
+        
+        .link--elara {
+            font-family: aktiv-grotesk-extended, sans-serif;
+            font-size: 1.375rem;
+        }
+        
+        .link--elara::before {
+            transform-origin: 50% 100%;
+            transition: clip-path 0.3s, transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+            clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
+        }
+        
+        .link--elara:hover::before {
+            transform: translate3d(0, 2px, 0) scale3d(1.08, 3, 1);
+            clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 50% 100%, 0 100%, 100% 100%, 100% 0%);
+        }
+        
+        .link--elara span {
+            display: inline-block;
+            transition: transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+        }
+        
+        .link--elara:hover span {
+            transform: translate3d(0, -2px, 0);
+        }
     </style>
 </head>
 
 <body class="prefers-reduced-motion: no-preference">
     <nav class="navbar navbar-expand-lg bg-light navbar-light">
         <div class="container-fluid">
-            <div class="brand fw-bold lh-base">Codechini</div>
+            <div class="brand fw-bold lh-base link--elara">Codechini</div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       			<span class="navbar-toggler-icon"></span>
     		</button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-xxl-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link active link link--elara" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="courses.html">Courses</a>
+                        <a class="nav-link link link--elara" href="courses.html">Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link link link--elara" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a>
+                        <a class="nav-link link link--elara" href="projects.html">Projects</a>
                     </li>
                 </ul>
             </div>
