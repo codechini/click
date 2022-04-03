@@ -36,10 +36,12 @@
     </script>
     <script>
         function Log_in() {
-            var x = document.getElementById("passphrase");
+            var x = document.getElementById("passphrase").value;
             var txt;
             if (x == "trumAtCh") {
-
+                window.location.href = "landing.html";
+            } else {
+                alert("Please type thy correct passphrase !");
             }
         }
     </script>
