@@ -6,6 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Product Line up</title>
+    <style>
+        .html {
+            scroll-behavior: smooth;
+        }
+        
+        .link {
+            cursor: pointer;
+            font-size: 18px;
+            position: relative;
+            white-space: nowrap;
+            color: var(--color-text);
+        }
+        
+        .link::before,
+        .link::after {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: currentColor;
+            top: 100%;
+            left: 0;
+            pointer-events: none;
+        }
+        
+        .link::before {
+            content: '';
+            /* show by default */
+        }
+        
+        .link--elara {
+            font-family: aktiv-grotesk-extended, sans-serif;
+            font-size: 1.375rem;
+        }
+        
+        .link--elara::before {
+            transform-origin: 50% 100%;
+            transition: clip-path 0.3s, transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+            clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
+        }
+        
+        .link--elara:hover::before {
+            transform: translate3d(0, 2px, 0) scale3d(1.08, 3, 1);
+            clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 50% 100%, 0 100%, 100% 100%, 100% 0%);
+        }
+        
+        .link--elara span {
+            display: inline-block;
+            transition: transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+        }
+        
+        .link--elara:hover span {
+            transform: translate3d(0, -2px, 0);
+        }
+    </style>
 </head>
 
 <body>
@@ -35,68 +89,104 @@
     <main>
         <div class="container-fluid" style="margin-top:20px;">
             <div class="container">
-                <div class="row">
+                <div class="row" style="padding-bottom:20px;">
                     <div class="col text-center">
                         <img src="imgs\Chrysanthemum.jpg" class="img-thumbnail" alt="...">
-                        <span class="" style="font-family:'Rubik Moonrocks', cursive; font-size: 24px;">Product 1</span>
+                        <a id="op_p1" style="text-decoration: none;font-family:'Rubik Moonrocks', cursive; font-size: 24px;color: black;" class="link link--elara" data-bs-toggle="modal" data-bs-target="#p1">Temperature Bath</a>
+                        <br>
+                        <span class="" style="font-family:'Rubik Moonrocks', cursive; font-size: 20px;color: rgb(108, 108, 108);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi voluptatem nihil et? Nostrum, cupiditate inventore cum laboriosam sit praesentium ratione vel in saepe fugiat, nam doloribus, illo vitae deleniti. Expedita!</span>
                     </div>
                     <div class="col text-center">
                         <img src="imgs\Hydrangeas.jpg" class="img-thumbnail" alt="...">
+                        <a href="index.html" style="text-decoration: none;font-family:'Rubik Moonrocks', cursive; font-size: 24px;color: black;" class="link link--elara">Temperature Bath</a>
+                        <br>
+                        <span class="" style="font-family:'Rubik Moonrocks', cursive; font-size: 20px;color: rgb(108, 108, 108);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi voluptatem nihil et? Nostrum, cupiditate inventore cum laboriosam sit praesentium ratione vel in saepe fugiat, nam doloribus, illo vitae deleniti. Expedita!</span>
+                    </div>
+                    <div class="col text-center">
+                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">
+                        <a href="index.html" style="text-decoration: none;font-family:'Rubik Moonrocks', cursive; font-size: 24px;color: black;" class="link link--elara">Temperature Bath</a>
+                        <br>
+                        <span class="" style="font-family:'Rubik Moonrocks', cursive; font-size: 20px;color: rgb(108, 108, 108);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi voluptatem nihil et? Nostrum, cupiditate inventore cum laboriosam sit praesentium ratione vel in saepe fugiat, nam doloribus, illo vitae deleniti. Expedita!</span>
+                    </div>
+                </div>
+
+                <div class="row" style="padding-bottom:20px;">
+                    <div class="col text-center">
+                        <img src="imgs\Desert.jpg" class="img-thumbnail" alt="...">
+                        <a href="index.html" style="text-decoration: none;font-family:'Rubik Moonrocks', cursive; font-size: 24px;color: black;" class="link link--elara">Temperature Bath</a>
+                        <br>
+                        <span class="" style="font-family:'Rubik Moonrocks', cursive; font-size: 20px;color: rgb(108, 108, 108);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi voluptatem nihil et? Nostrum, cupiditate inventore cum laboriosam sit praesentium ratione vel in saepe fugiat, nam doloribus, illo vitae deleniti. Expedita!</span>
+                    </div>
+                    <div class="col text-center">
+                        <img src="imgs\Lighthouse.jpg" class="img-thumbnail" alt="...">
+                        <a href="index.html" style="text-decoration: none;font-family:'Rubik Moonrocks', cursive; font-size: 24px;color: black;" class="link link--elara">Temperature Bath</a>
+                        <br>
+                        <span class="" style="font-family:'Rubik Moonrocks', cursive; font-size: 20px;color: rgb(108, 108, 108);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi voluptatem nihil et? Nostrum, cupiditate inventore cum laboriosam sit praesentium ratione vel in saepe fugiat, nam doloribus, illo vitae deleniti. Expedita!</span>
                     </div>
                     <div class="col text-center">
                         <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row" style="padding-bottom:20px;">
                     <div class="col text-center">
-                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">4
+                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">
                     </div>
                     <div class="col text-center">
-                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">5
+                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">
                     </div>
                     <div class="col text-center">
-                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">6
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col text-center">
-                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">7
-                    </div>
-                    <div class="col text-center">
-                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">8
-                    </div>
-                    <div class="col text-center">
-                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">9
+                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row" style="padding-bottom:20px;">
                     <div class="col text-center">
-                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">10
+                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">
                     </div>
                     <div class="col text-center">
-                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">11
+                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">
                     </div>
                     <div class="col text-center">
-                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">12
+                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" style="padding-bottom:20px;">
                     <div class="col text-center">
-                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">13
+                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">
                     </div>
                     <div class="col text-center">
-                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">14
+                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">
                     </div>
                     <div class="col text-center">
-                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">15
+                        <img src="imgs\space2.jpg" class="img-thumbnail" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="p1">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Details</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="pdf-section">
+                            <iframe src="pdf/Sem-III-IV Syllabus.pdf" frameborder="0" width="100%" height="550px"></iframe>
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+    <!-- Vertically centered scrollable modal -->
+    <!--  <div id="p2" class="modal-dialog modal-dialog-centered modal-dialog-scrollable fade" data-backdrop="static"> -->
+
+
+
+    </div>
+
     <section class="">
         <!-- Footer -->
         <footer class="text-center text-white" style="background-color: #0a4275;">
@@ -122,6 +212,9 @@
         </footer>
         <!-- Footer -->
     </section>
+    <script>
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
