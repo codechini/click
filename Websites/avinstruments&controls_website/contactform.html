@@ -13,42 +13,20 @@
     <main>
         <div class="container-fluid">
             <div class="container">
-                <div class="align-center">
+                <form>
                     <div class="h1 text-center py-5 ">Contact Form</div>
-                    <input name="name" type="text" class="form-control mx-auto shadow p-3 mb-3 bg-body rounded" style="width:400px; height:70px;" placeholder="Name/Company" aria-label="name" aria-describedby="basic-addon1">
-                    <input name="email" type="text" id="email" class="form-control mx-auto shadow p-3 mb-3 bg-body rounded" style="width:400px; height:70px;" placeholder="Email" aria-label="email" aria-describedby="basic-addon1">
-                    <textarea name="message" class="form-control mx-auto shadow p-3 mb-3 bg-body rounded" style="width:400px; height:170px;" placeholder="Message" aria-label="message" aria-describedby="basic-addon1"></textarea>
+                    <input name="name" type="text" class="form-control mx-auto shadow p-3 mb-3 bg-body rounded" style=" height:70px;" placeholder="Name/Company" aria-label="name" aria-describedby="basic-addon1">
+                    <input name="email" type="text" id="email" class="form-control mx-auto shadow p-3 mb-3 bg-body rounded" style=" height:70px;" placeholder="Email" aria-label="email" aria-describedby="emailHelp">
+                    <textarea name="message" class="form-control mx-auto shadow p-3 mb-3 bg-body rounded" style=" height:170px;" placeholder="Message" aria-label="message" aria-describedby="basic-addon1"></textarea>
                     <div class="text-center">
                         <button type="submit" class="btn btn-outline-dark btn-rounded shadow p-3 mb-5 mx-2" onclick="ValidateEmail()">Submit</button>
                         <a type="button" href="products.html" class="btn btn-outline-dark btn-rounded shadow p-3 mb-5">Back to Products</a>
                     </div>
-                </div>
-
-
+                </form>
             </div>
         </div>
     </main>
     <script>
-        var nm = document.getElementById('name').value;
-        var mail = document.getElementById('email').value;
-        var msg = document.getElementById('message').value;
-        var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
-        function ValidateEmail() {
-            if (mail == null || mail == "") {
-                alert("Please enter your Email");
-            } else {
-                return false;
-            }
-        }
-
-        function ValidateName() {
-            if (nm == null || nm == "") {
-                alert("Please enter Your Name/Company Name");
-            } else {
-                return false;
-            }
-        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
