@@ -1,4 +1,4 @@
-const h1 = document.createElement('h1');
-h1.textContent = 'Some bullshit written here';
-h1.className = 'header';
-document.getElementsById('root').append(h1);
+const h1 = document.createElement("h1")
+h1.textContent = "Some rainbow written here"
+h1.className = "header"
+document.getElementById("root").append(h1)
