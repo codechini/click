@@ -9,6 +9,7 @@
     --color-4: grey;
     --color-5: #eb4034;
     --color-6: #333;
+    --color-7: #be73ff;
 }
 
 
@@ -25,8 +26,9 @@ nav {
 }
 
 nav a {
-    color: var(--color-2);
+    color: var(--color-7);
     text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 nav div a {
