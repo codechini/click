@@ -1,0 +1,61 @@
+[debug] [2022-05-22T10:59:43.566Z] ----------------------------------------------------------------------
+[debug] [2022-05-22T10:59:43.568Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\INDIA\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-05-22T10:59:43.568Z] CLI Version:   11.0.0
+[debug] [2022-05-22T10:59:43.568Z] Platform:      win32
+[debug] [2022-05-22T10:59:43.568Z] Node Version:  v17.0.1
+[debug] [2022-05-22T10:59:43.569Z] Time:          Sun May 22 2022 16:29:43 GMT+0530 (India Standard Time)
+[debug] [2022-05-22T10:59:43.569Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-22T10:59:43.575Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-22T10:59:43.576Z] > authorizing via signed-in user (arangathvenuchinmay@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\VSCode_pr_projects\Websites\pLinth\plinth
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2022-05-22T11:01:12.933Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2022-05-22T11:01:13.872Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2022-05-22T11:01:13.873Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project plinth-6cbae (pLinth) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[info] +  Wrote public/404.html 
+[debug] [2022-05-22T11:02:48.853Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2022-05-22T11:02:48.954Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2022-05-22T11:02:48.954Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"9.8.1","browserURL":"https://www.gstatic.com/firebasejs/9.8.1/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/9.8.1/firebase.tgz"},"live":{"version":"9.8","browserURL":"https://www.gstatic.com/firebasejs/live/9.8/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/9.8/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/9.8.1/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/9.8.1/firebase-auth/cordova.js","auth/react-native":"https://www.gstatic.com/firebasejs/9.8.1/firebase-auth/react-native.js","functions":"https://www.gstatic.com/firebasejs/9.8.1/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore/lite.js","storage":"https://www.gstatic.com/firebasejs/9.8.1/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/9.8.1/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/9.8.1/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/9.8.1/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/9.8.1/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js","firestore.memory":"https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.memory.js"}}
+[info] i  Skipping write of public/index.html 
+[info] 
+[info] i  Detected a .git folder at D:\VSCode_pr_projects 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=838630631&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2022-05-22T11:03:26.089Z] >>> HTTP REQUEST POST https://github.com/login/oauth/access_token  
+ {"client_id":"89cf50f02ac6aaed3484","client_secret":"3330d14abc895d9a74d5f17cd7a00711fa2c5bf0","code":"8f736a95e5187c971e50","redirect_uri":"http://localhost:9005","state":"838630631"}
+[debug] [2022-05-22T11:03:26.413Z] <<< HTTP RESPONSE 200 {"server":"GitHub.com","date":"Sun, 22 May 2022 11:03:26 GMT","content-type":"application/json; charset=utf-8","transfer-encoding":"chunked","vary":"X-PJAX, X-PJAX-Container, Turbo-Visit, Turbo-Frame, Accept-Encoding, Accept, X-Requested-With","permissions-policy":"interest-cohort=()","etag":"W/\"081bc02bb1d6c1c493d00ae22e4e3de8\"","cache-control":"max-age=0, private, must-revalidate","strict-transport-security":"max-age=31536000; includeSubdomains; preload","x-frame-options":"deny","x-content-type-options":"nosniff","x-xss-protection":"0","referrer-policy":"origin-when-cross-origin, strict-origin-when-cross-origin","expect-ct":"max-age=2592000, report-uri=\"https://api.github.com/_private/browser/errors\"","content-security-policy":"default-src 'none'; base-uri 'self'; block-all-mixed-content; child-src github.com/assets-cdn/worker/ gist.github.com/assets-cdn/worker/; connect-src 'self' uploads.github.com objects-origin.githubusercontent.com www.githubstatus.com collector.github.com raw.githubusercontent.com api.github.com github-cloud.s3.amazonaws.com github-production-repository-file-5c1aeb.s3.amazonaws.com github-production-upload-manifest-file-7fdce7.s3.amazonaws.com github-production-user-asset-6210df.s3.amazonaws.com cdn.optimizely.com logx.optimizely.com/v1/events translator.github.com *.actions.githubusercontent.com wss://*.actions.githubusercontent.com online.visualstudio.com/api/v1/locations github-production-repository-image-32fea6.s3.amazonaws.com github-production-release-asset-2e65be.s3.amazonaws.com insights.github.com wss://alive.github.com; font-src github.githubassets.com; form-action 'self' github.com gist.github.com objects-origin.githubusercontent.com; frame-ancestors 'none'; frame-src render.githubusercontent.com viewscreen.githubusercontent.com notebooks.githubusercontent.com; img-src 'self' data: github.githubassets.com identicons.github.com github-cloud.s3.amazonaws.com secured-user-images.githubusercontent.com/ *.githubusercontent.com; manifest-src 'self'; media-src github.com user-images.githubusercontent.com/; script-src github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src github.com/assets-cdn/worker/ gist.github.com/assets-cdn/worker/","x-github-request-id":"DF64:5027:FD1DBB:131BB02:628A187D"}
+[debug] [2022-05-22T11:03:26.418Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2022-05-22T11:03:26.722Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2022-05-22T11:03:26.722Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"codechini","id":76209471,"node_id":"MDQ6VXNlcjc2MjA5NDcx","avatar_url":"https://avatars.githubusercontent.com/u/76209471?v=4","gravatar_id":"","url":"https://api.github.com/users/codechini","html_url":"https://github.com/codechini","followers_url":"https://api.github.com/users/codechini/followers","following_url":"https://api.github.com/users/codechini/following{/other_user}","gists_url":"https://api.github.com/users/codechini/gists{/gist_id}","starred_url":"https://api.github.com/users/codechini/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/codechini/subscriptions","organizations_url":"https://api.github.com/users/codechini/orgs","repos_url":"https://api.github.com/users/codechini/repos","events_url":"https://api.github.com/users/codechini/events{/privacy}","received_events_url":"https://api.github.com/users/codechini/received_events","type":"User","site_admin":false,"name":null,"company":null,"blog":"","location":"Mumbai","email":null,"hireable":null,"bio":"I am currently a student and love making websites ","twitter_username":null,"public_repos":3,"public_gists":0,"followers":0,"following":3,"created_at":"2020-12-18T11:33:09Z","updated_at":"2022-05-20T14:55:24Z","private_gists":0,"total_private_repos":1,"owned_private_repos":1,"disk_usage":33906,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as codechini 
+[info] 
