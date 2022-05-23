@@ -13,20 +13,21 @@ function App() {
 
         <AuthProvider >
         <BrowserRouter >
-        <Navbar />
-        <Switch >
-        <Route exact path = "/register"
-        component = { Register }
-        /> 
-        <Route exact path = "/login" component = { Login }
-        /> 
-        <PrivateRoute exact path = "/profile"
-        component = { Profile }
-        /> 
-        <PrivateRoute exact path = "/"
-        component = { Home }
-        /> 
-        </Switch> 
+            <Navbar />
+                <Switch >
+                <Route exact path = "/register"
+                        component = { Register }
+                /> 
+                <Route exact path = "/login" 
+                        component = { Login }
+                /> 
+                <PrivateRoute exact path = "/profile"
+                        component = { Profile }
+                /> 
+                <PrivateRoute exact path = "/"
+                        component = { Home }
+                /> 
+                </Switch> 
         </BrowserRouter> 
         </AuthProvider>
     );

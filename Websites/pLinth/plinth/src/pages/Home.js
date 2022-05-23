@@ -126,11 +126,9 @@ const Home = () => {
               <h3>{chat.name}</h3>
             </div>
             <div className="messages">
-              {msgs.length
-                ? msgs.map((msg, i) => (
+              {msgs.length ? msgs.map((msg, i) => (
                     <Message key={i} msg={msg} user1={user1} />
-                  ))
-                : null}
+              )): null}
             </div>
             <MessageForm
               handleSubmit={handleSubmit}
