@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Navbar = () => {
   return (
-    <nav className="shadow p-3 mb-5 bg-white rounded">
+    <nav className="shadow p-4 mb-2 bg-white rounded">
       <a href="../App.js">
         <img src={Codechini_img} alt="My Logo" height="35px" />
       </a>
