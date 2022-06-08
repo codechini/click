@@ -1,10 +1,17 @@
 * {
     font-family: monospace;
+    /* background-color: rgb(3, 1, 1); */
+}
+
+main {
+    background-color: rgb(9, 7, 6);
 }
 
 .fadeImg {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url(./imgs/code_photo.jpg);
-    height: 50vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url(./imgs/train.jpg);
+    height: 80vh;
+    width: 100%;
+    margin: 0 auto;
     background-size: cover;
     background-repeat: no-repeat;
 }
