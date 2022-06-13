@@ -9,7 +9,16 @@ main {
 
 .fadeImg {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url(./imgs/train.jpg);
-    height: 80vh;
+    height: 90vh;
+    width: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.P2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url(./imgs/Bhel.jpg);
+    height: 100vh;
     width: 100%;
     margin: 0 auto;
     background-size: cover;
