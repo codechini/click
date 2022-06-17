@@ -5,6 +5,8 @@
 
 main {
     background-color: rgb(9, 7, 6);
+    /* scroll-snap-type: y proximity;
+    overflow-y: scroll; */
 }
 
 .fadeImg {
@@ -16,11 +18,28 @@ main {
     background-repeat: no-repeat;
 }
 
+
+/* .P1 {
+    height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    scroll-snap-align: start;
+} */
+
 .P2 {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url(./imgs/Bhel.jpg);
     height: 100vh;
     width: 100%;
     margin: 0 auto;
+    scroll-snap-align: start;
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+
+/* .P3 {
+    height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    scroll-snap-align: start;
+} */
