@@ -4,7 +4,7 @@
 }
 
 main {
-    background-color: rgb(9, 7, 6);
+    /* background-color: rgb(9, 7, 6); */
     /* scroll-snap-type: y proximity;
     overflow-y: scroll; */
 }
@@ -18,16 +18,17 @@ main {
     background-repeat: no-repeat;
 }
 
-
-/* .P1 {
+.P1 {
+    vertical-align: center;
     height: 100vh;
     width: 100%;
     margin: 0 auto;
     scroll-snap-align: start;
-} */
+    border: 2px black;
+}
 
 .P2 {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url(./imgs/Bhel.jpg);
+    /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url(./imgs/Bhel.jpg); */
     height: 100vh;
     width: 100%;
     margin: 0 auto;
@@ -36,10 +37,14 @@ main {
     background-repeat: no-repeat;
 }
 
-
-/* .P3 {
+.P3 {
     height: 100vh;
     width: 100%;
     margin: 0 auto;
     scroll-snap-align: start;
-} */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+}
