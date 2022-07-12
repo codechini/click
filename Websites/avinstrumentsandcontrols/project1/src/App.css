@@ -1,0 +1,58 @@
+.carttxt {
+    /* display: none; */
+    font-size: 12px;
+}
+
+.buttons:hover+.carttxt {
+    display: contents;
+    font-size: 12px;
+    color: aliceblue;
+}
+
+.container {
+    text-align: center;
+}
+
+.titletxt {
+    display: inline-block;
+    background: rgba(63, 95, 255, 0.773);
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+}
+
+.title1 {
+    font-size: 44px;
+}
+
+.pcontainer {
+    padding: 40px 20px 20px 20px;
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(46, 81, 206);
+}
+
+.brand:hover {
+    color: rgb(46, 81, 206);
+}
+
+.links {
+    text-decoration: none;
+    color: rgb(231, 231, 231);
+}
+
+.links:hover {
+    color: rgb(231, 231, 231);
+}
+
+.ftr {
+    background-color: rgb(33, 37, 41);
+}
+
+.aboutus {
+    height: 71vh;
+    background: rgb(207, 207, 207);
+}
