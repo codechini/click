@@ -9,17 +9,19 @@ import {
 
 const Footer = (props) => {
   return (
+    <>
     <Card bg='dark' className="text-center text-white">
       <Card.Header>{props.l1}</Card.Header>
       <Card.Body bg='dark'>
-        <Card.Title>Special title treatment</Card.Title>
+        <Card.Title>For further Information</Card.Title>
         <Card.Text>
-          With supporting text below as a natural lead-in to additional content.
+          123-4567890
         </Card.Text>
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
-      <Card.Footer className="text-muted">2 days ago</Card.Footer>
+      <Card.Footer className="text-muted"></Card.Footer>
     </Card>
+</>
   )
 }
 

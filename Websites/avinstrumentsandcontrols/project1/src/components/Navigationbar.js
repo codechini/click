@@ -10,7 +10,10 @@ import {
   //Button
 }from 'react-bootstrap';
 
-import {BrowserRouter as Router,Routes,Route,Link} from 'react-router-dom';
+import {BrowserRouter as Router,
+  Routes,
+  Route,
+  Link} from 'react-router-dom';
 
 import {FaCartPlus} from 'react-icons/fa';
 import { CgLogIn } from 'react-icons/cg';
@@ -22,7 +25,7 @@ const Navigationbar = (props) => {
     <>
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand className='fs-4' ><Link className='brand' to="/App">{props.icon}</Link></Navbar.Brand>
+        <Navbar.Brand className='fs-4' ><Link className='brand' to="/Home">{props.icon}</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -30,19 +33,19 @@ const Navigationbar = (props) => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link ><Link className='links' to="/App">{props.l1}</Link></Nav.Link>
+            <Nav.Link ><Link className='links' to="/Home">{props.l1}</Link></Nav.Link>
             <Nav.Link ><Link className='links' to="/Products">{props.l2}</Link></Nav.Link>
             <Nav.Link ><Link className='links' to="/LearnMore">{props.l3}</Link></Nav.Link>
           </Nav>
           <div className="buttons d-flex justify-content-center">
-            <a href="" className="btn btn-outline text-white">
+            <Link to='/RegPage' className="btn btn-outline text-white">
               <AiOutlineUserAdd size='24px'/>&nbsp; {props.register}
               <div className='carttxt'>Register</div>
-            </a>
-            <a href="" className="btn btn-outline text-white">
+            </Link>
+            <Link to='/LoginPage' className="btn btn-outline text-white">
               <CgLogIn size='24px'/>&nbsp; {props.login}
               <div className='carttxt'>Login</div>
-            </a>
+            </Link>
           
             <a href="" className="btn btn-outline text-white">
               <FaCartPlus size='24px'/>&nbsp; {props.quantity}
