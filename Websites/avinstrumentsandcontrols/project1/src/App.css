@@ -56,3 +56,19 @@
     height: 71vh;
     background: rgb(207, 207, 207);
 }
+
+.frm {
+    background: rgb(233, 233, 233);
+    height: 70vh;
+    display: flex;
+    padding: 0px 40px 0px 40px;
+}
+
+.inpt {
+    max-width: 500px;
+}
+
+.btnReg {
+    padding: 0px 0px 0px 0px;
+    align-items: center;
+}

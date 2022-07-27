@@ -22,7 +22,7 @@ const ShowProducts=()=>{
       </div>
     </>
   )
-}
+  }
 
   return (
     <>
@@ -38,8 +38,8 @@ const ShowProducts=()=>{
     </Row>
     </div>
 
-    <div className="pcontainer d-flex">
-    <Card style={{ width: '29rem' }}>
+    <div className="pcontainer d-flex justify-content-center align-items-center">
+    <Card style={{ width: '26rem' }}>
       <Card.Img variant="top" src={pic} height='500px' />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>

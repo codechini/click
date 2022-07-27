@@ -5,6 +5,9 @@ import LearnMore from './Pages/LearnMore';
 import Products from './Pages/Products';
 import Footer from '../src/components/Footer';
 import Home from './Pages/Home';
+import Reg from './Pages/Registration';
+import login from './Pages/Login';
+
 
 import {
   Card,
@@ -19,6 +22,7 @@ import {
   Route,
   //Link
 } from 'react-router-dom';
+import Login from './Pages/Login';
 
 
 
@@ -28,17 +32,19 @@ function App() {
     
     
     <Router>
-     <Nav icon='AVInstrumentsandControls' l1='Home' l2='Products' l3='Learn More' quantity='(2)'/> 
-     <Home title='Products'/>
-     
+      <Nav icon='AVInstrumentsandControls' l1='Home' l2='Products' l3='Learn More' quantity='(2)'/> 
+      {/* <Home title='AVIC'/> */}
+      {/* <Products/> */}
       <Routes>
+        <Route path='/Home' element={<Home />} />
         <Route path='/Products' element={<Products />}/>
-        
-      </Routes>
-      <Routes>
         <Route path='/LearnMore' element={<LearnMore />}/>
+        <Route path ='/RegPage' element={<Reg />}/>
+        <Route path ='/LoginPage' element={<Login />}/>
       </Routes>
+      
       <Footer l1='Contact Us' />
+
     </Router>
     
     
