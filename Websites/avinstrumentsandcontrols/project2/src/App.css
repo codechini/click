@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
+.carttxt {
+    /* display: none; */
+    font-size: 12px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.buttons:hover+.carttxt {
+    display: contents;
+    font-size: 12px;
+    color: aliceblue;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+    text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.titletxt {
+    display: inline-block;
+    /* background: rgba(63, 95, 255, 0.773); */
+    color: rgb(255, 255, 255);
+    font-size: 24px;
 }
 
-.App-link {
-  color: #61dafb;
+.title1 {
+    font-size: 44px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pcontainer {
+    padding: 40px 20px 20px 20px;
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(46, 81, 206);
+}
+
+.brand:hover {
+    color: rgb(46, 81, 206);
+}
+
+.links {
+    text-decoration: none;
+    color: rgb(231, 231, 231);
+}
+
+.links:hover {
+    color: rgb(231, 231, 231);
+}
+
+.ftr {
+    background-color: rgb(33, 37, 41);
+}
+
+.aboutus {
+    height: 71vh;
+    background: rgb(207, 207, 207);
+}
+
+.frm {
+    background: rgb(233, 233, 233);
+    height: 70vh;
+    display: flex;
+    padding: 0px 40px 0px 40px;
+}
+
+.inpt {
+    max-width: 500px;
+}
+
+.btnReg {
+    padding: 0px 0px 0px 0px;
+    align-items: center;
 }
