@@ -8,6 +8,8 @@ import Home from './Pages/Home';
 import Reg from './Pages/Registration';
 import login from './Pages/Login';
 
+import { db } from '../src/firebase-config';
+
 import {
   Card,
   Col,

@@ -7,6 +7,7 @@ import {
 } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import pic from '../imgs/p1.jpg';
+import { Link } from 'react-router-dom';
 
 const Products = () => {
   
@@ -47,7 +48,7 @@ const ShowProducts=()=>{
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        <Button variant="primary" size='lg'>Buy</Button>
+        <Button variant="primary" size='lg'><Link className='links' to='/RegPage'>Buy</Link> </Button>
       </Card.Body>
     </Card>
     </div>

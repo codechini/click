@@ -23,27 +23,28 @@ const Login = () => {
     <div className="frm justify-content-center align-items-center">
       <Form className=''>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label >Company Name</Form.Label>
-        <Form.Control id='C_email' className='inpt' type="email" placeholder="Enter Name" />
+        <Form.Label >Email Address</Form.Label>
+        <Form.Control size='lg' id='C_email' className='inpt' type="email" placeholder="Enter Name" />
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label >Password</Form.Label>
-        <Form.Control className='psswd' type="password" placeholder="Enter Name" />
+        <Form.Control size='lg' className='psswd' type="password" placeholder="Enter Name" />
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
-      <button onClick={()=>setTogggled(!isToggled)} href='../Home' className='btnReg align-items-center' variant="primary" type="submit">
+      <Container>
+        <button onClick={()=>setTogggled(!isToggled)} href='../Home' className='btnReg align-items-center' variant="primary" type="submit">
           Login
           {/* {isToggled && <Home />} */}
-      </button>
-
+        </button>
+      </Container>
       <Container>
         <Row>
           <Col>
           <div className="tosignup">
-            Don't have an Accout<Link to="/RegPage">Register</Link>
+            Don't have an Account <Link to="/RegPage">Register</Link>
           </div>
           </Col>
         </Row>

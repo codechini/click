@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react'
 import {
   // NavDropdown,
   Row,
@@ -13,13 +13,20 @@ import {
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// import { db } from '../src/firebase-config';
+
 const Registration = () => {
+const [user,setUser]=useState([]);
+const [companyName,setcompanyName]=useState([]);
+
+useEffect(()=>{
+},[]);
 
   return (
     <>
       <div className="frm justify-content-center align-items-center">
-
       <Form className='justify-items-center'>
+      <span className='regTitle'>Register your Company</span>
       <Row>
       <Col sm={6} >
       <Form.Group className="mb-2" controlId="formBasicText">
@@ -79,7 +86,7 @@ const Registration = () => {
         <Row>
           <Col>
           <div className="tosignup py-2">
-            Already have an Accout <Link to="/LoginPage">Login</Link>
+            Already have an Accout<Link to="/LoginPage">Login</Link>
           </div>
           </Col>
         </Row>
