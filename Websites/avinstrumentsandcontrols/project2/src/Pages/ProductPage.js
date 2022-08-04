@@ -40,7 +40,10 @@ const ProductPage = () => {
     </div>
       <Row>
         <Col>
-          <Products imgsrc={pic}/>
+          <Products imgsrc={pic} 
+          name='Pneumatic Pump'
+          
+          />
         </Col>
         <Col>
           <Products/>
