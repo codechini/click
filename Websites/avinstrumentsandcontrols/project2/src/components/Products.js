@@ -1,8 +1,8 @@
 import React,{useState,useEffect} from 'react';
 import {
-  Row,
+  //Row,
   Button,
-  Col,
+  //Col,
   Card
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
