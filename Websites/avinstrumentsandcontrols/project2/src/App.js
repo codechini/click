@@ -2,11 +2,12 @@ import './App.css';
 import Nav from '../src/components/Navigationbar';
 // import Main from './Pages/Home';
 import LearnMore from './Pages/LearnMore';
-import Products from './Pages/Products';
+import Products from './components/Products';
 import Footer from '../src/components/Footer';
 import Home from './Pages/Home';
 import Reg from './Pages/Registration';
 import login from './Pages/Login';
+import ProductPage from './Pages/ProductPage';
 
 import { db } from '../src/firebase-config';
 
@@ -36,7 +37,7 @@ function App() {
       {/* <Products/> */}
       <Routes>
         <Route path='/Home' element={<Home />} />
-        <Route path='/Products' element={<Products />}/>
+        <Route path='/ProductPage' element={<ProductPage />}/>
         <Route path='/LearnMore' element={<LearnMore />}/>
         <Route path ='/RegPage' element={<Reg />}/>
         <Route path ='/LoginPage' element={<Login />}/>

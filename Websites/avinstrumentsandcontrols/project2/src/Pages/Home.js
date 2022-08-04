@@ -6,7 +6,7 @@ import {
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import pic from '../imgs/p2.jpg';
-import Products from './Products';
+import Products from '../components/Products';
 
 
 const Home = (props) => {

@@ -34,7 +34,7 @@ const Navigationbar = (props) => {
             navbarScroll
           >
             <Nav.Link ><Link className='links' to="/Home">{props.l1}</Link></Nav.Link>
-            <Nav.Link ><Link className='links' to="/Products">{props.l2}</Link></Nav.Link>
+            <Nav.Link ><Link className='links' to="/ProductPage">{props.l2}</Link></Nav.Link>
             <Nav.Link ><Link className='links' to="/LearnMore">{props.l3}</Link></Nav.Link>
           </Nav>
           <div className="buttons d-flex justify-content-center">
