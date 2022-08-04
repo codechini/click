@@ -12,14 +12,20 @@ import {
 }from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-// import { db } from '../src/firebase-config';
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '../firebase-config';
 
 const Registration = () => {
 const [user,setUser]=useState([]);
+const userCollectionRef=collection(db,"client");
 const [companyName,setcompanyName]=useState([]);
 
 useEffect(()=>{
+  const getUsers= async()=>{
+    const clientData=await getDocs(userCollectionRef);
+    console.log(clientData);
+  }
+  getUsers();
 },[]);
 
   return (

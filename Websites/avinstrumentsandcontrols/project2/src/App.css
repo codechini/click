@@ -1,3 +1,7 @@
+html {
+    background: rgb(33, 37, 41);
+}
+
 .carttxt {
     /* display: none; */
     font-size: 12px;
@@ -83,4 +87,20 @@
 .regTitle {
     font-size: 36px;
     padding-top: 1rem;
+}
+
+.card {
+    border-radius: 0;
+}
+
+::-webkit-scrollbar {
+    width: 2rem;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(120, 60%, 50% / 1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(120, 100%, 20% / 1);
 }

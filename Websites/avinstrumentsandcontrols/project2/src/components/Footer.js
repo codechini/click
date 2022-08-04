@@ -10,7 +10,7 @@ import {
 const Footer = (props) => {
   return (
     <>
-    <Card bg='dark' className="text-center text-white">
+    <Card bg='dark' className="text-center text-white rounded-0">
       <Card.Header>{props.l1}</Card.Header>
       <Card.Body bg='dark'>
         <Card.Title>For further Information</Card.Title>
