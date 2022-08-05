@@ -118,3 +118,20 @@ html {
     max-width: 100%;
     margin: 0% auto;
 }
+
+.detailcard {
+    display: block;
+    height: 100%;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.testredirect {
+    height: 540px;
+}
+
+.btn {
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}

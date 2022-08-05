@@ -13,18 +13,19 @@ import pic3 from '../imgs/p3.jpg';
 const ProductDetails = () => {
   return (
     <>
-    <div className='detailpage'>
+    <div className='container'>
       <Row>
       <Col>
         <Products imgsrc={pic3}/>
       </Col>
-      <Col className='productdetails'>
-      <Card className=''>
+      <Col className=''>
+      <Card className='detailcard'>
       <Card.Header as="h5">Featured</Card.Header>
       <Card.Body>
         <Card.Title>Special title treatment</Card.Title>
         <Card.Text>
           With supporting text below as a natural lead-in to additional content.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quaerat quos quam iure tempora at atque officiis. Repellat beatae excepturi ut corporis error ducimus at, ratione quo natus eos nulla?
         </Card.Text>
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>

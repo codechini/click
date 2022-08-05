@@ -2,7 +2,8 @@ import React from 'react';
 import {
   Card,
   Col,
-  Row
+  Row,
+  Button
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import pic from '../imgs/p2.jpg';
@@ -25,8 +26,18 @@ const Home = (props) => {
         </div>
       </Card.ImgOverlay>
     </Card>
-    
-    
+    <div className="testredirect">
+      <Row>
+        <Col className=''>
+          Have an equipment to test Contact us 
+        </Col>
+        <Col>
+          <Button className='btn' size='sm'>
+            Submit
+          </Button>
+        </Col>
+      </Row>
+    </div>
     {/* <Products /> */}
     </>
   )
