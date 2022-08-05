@@ -25,6 +25,7 @@ import {
   //Link
 } from 'react-router-dom';
 import Login from './Pages/Login';
+import ProductDetails from './Pages/ProductDetails';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path='/LearnMore' element={<LearnMore />}/>
         <Route path ='/RegPage' element={<Reg />}/>
         <Route path ='/LoginPage' element={<Login />}/>
+        <Route path ='/ProductDetails' element={<ProductDetails />}/>
       </Routes>
       
       <Footer l1='Contact Us' />

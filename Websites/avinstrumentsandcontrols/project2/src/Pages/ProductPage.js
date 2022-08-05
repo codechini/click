@@ -8,8 +8,8 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Products from '../components/Products';
 
-import pic from '../imgs/p1.jpg';
-
+import pic1 from '../imgs/p1.jpg';
+import pic3 from '../imgs/p3.jpg';
 const ProductPage = () => {
 
   const ShowProducts=()=>{
@@ -27,29 +27,31 @@ const ProductPage = () => {
 
   return (
     <>
-  <div className="container">
-    <Row>
-    <Col>
-      <p className="display-6 fw-bold">Products</p>
-    </Col>
+    <div className="container">
+    <div className="container">
+      <Row>
+      <Col>
+        <p className="display-6 fw-bold">Products</p>
+      </Col>
     </Row>
     <Row className='justify-content-center'>
       {/* {loading ? <Loading /> : <ShowProducts />} */}
       <ShowProducts/>
     </Row>
-    </div>
-      <Row>
-        <Col>
-          <Products imgsrc={pic} 
+  </div>
+  <div className="container">
+    <Row>
+      <Col>
+        <Products imgsrc={pic1} 
           name='Pneumatic Pump'
           
           />
         </Col>
         <Col>
-          <Products/>
+          <Products imgsrc={pic3}/>
         </Col>
         <Col>
-          <Products/>
+          <Products imgsrc={pic3}/>
         </Col>
       </Row>
       <Row>
@@ -63,6 +65,8 @@ const ProductPage = () => {
           <Products/>
         </Col>
       </Row>
+      </div>
+</div>
     </>
     )
 }

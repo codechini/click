@@ -12,7 +12,7 @@ const Products = (props) => {
   return (
     <>
     <div className="pcontainer d-flex justify-content-center align-items-center">
-    <Card style={{ width: '26rem' }}>
+    <Card style={{ width: '25rem' }}>
       <Card.Img variant="top" src={props.imgsrc} height='500px' />
       <Card.Body>
         <Card.Title>{props.name}</Card.Title>
@@ -20,7 +20,9 @@ const Products = (props) => {
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        <Button variant="primary" size='lg'><Link className='links' to='/RegPage'>Buy</Link> </Button>
+        <Button variant="primary" size='lg'>
+          <Link className='links' to='/ProductDetails'>Buy</Link> 
+        </Button>
       </Card.Body>
     </Card>
     </div>

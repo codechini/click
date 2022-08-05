@@ -15,6 +15,11 @@ html {
 
 .container {
     text-align: center;
+    display: block;
+    max-width: 90%;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    /* box-sizing: none; */
 }
 
 .titletxt {
@@ -29,7 +34,7 @@ html {
 }
 
 .pcontainer {
-    padding: 40px 20px 20px 20px;
+    padding: 40px 0px 30px 8px;
 }
 
 .brand {
@@ -94,13 +99,22 @@ html {
 }
 
 ::-webkit-scrollbar {
-    width: 2rem;
+    width: 0rem;
 }
 
 ::-webkit-scrollbar-track {
-    background: hsl(120, 60%, 50% / 1);
+    background: hsl(0, 60%, 50% / 1);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: hsl(120, 100%, 20% / 1);
+    background: hsl(0, 100%, 20% / 1);
+}
+
+.productdetails {
+    max-width: 100%;
+}
+
+.detailpage {
+    max-width: 100%;
+    margin: 0% auto;
 }
