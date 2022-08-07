@@ -27,16 +27,16 @@ const Home = (props) => {
       </Card.ImgOverlay>
     </Card>
     <div className="testredirect">
-      <Row>
-        <Col className=''>
-          Have an equipment to test Contact us 
+      <Row className=''>
+        <Col xs={10}>
+          <p className='c1'>
+            Have an equipment to test Contact us 
+          </p>
         </Col>
         <Col>
-          <Button className='btn' size='sm'>
-            Submit
-          </Button>
+          <button className='btn' href='../Payment'>Submit</button>
         </Col>
-      </Row>
+      </Row>  
     </div>
     {/* <Products /> */}
     </>

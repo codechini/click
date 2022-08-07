@@ -15,6 +15,10 @@ html {
 
 .container {
     text-align: center;
+    /* justify-content: center; */
+    /* justify-items: center; */
+    /* align-items: center; */
+    /* vertical-align: middle; */
     display: block;
     max-width: 90%;
     padding: 0px 0px 0px 0px;
@@ -127,11 +131,36 @@ html {
 }
 
 .testredirect {
-    height: 540px;
+    height: 50vh;
+    max-width: 100%;
 }
 
 .btn {
-    align-content: center;
-    justify-content: center;
+    text-align: center;
+    /* color: rgb(46, 81, 206); */
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    margin: 125px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.c1 {
+    border: 5px black;
+    display: block;
+    /* text-align: center; */
+    margin-left: 40px;
+    margin-top: 30px;
+    font-size: 28px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.c2 {
+    border: 5px black;
+    display: inline-block;
     text-align: center;
 }
