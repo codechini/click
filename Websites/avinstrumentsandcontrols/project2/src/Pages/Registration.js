@@ -18,12 +18,20 @@ import { db } from '../firebase-config';
 const Registration = () => {
 const [user,setUser]=useState([]);
 const userCollectionRef=collection(db,"client");
-const [companyName,setcompanyName]=useState([]);
+const [item,setItem]=useState([]);
+const inventoryColl=collection(db,"inventory");
+
+const createClient= async()=>{
+
+}
 
 useEffect(()=>{
-  const getUsers= async()=>{
+  const getUsers = async()=>{
     const clientData=await getDocs(userCollectionRef);
-    console.log(clientData);
+    // console.log(clientData);
+    setUser(clientData.docs.map((doc)=>({
+      ...doc.data(),id: doc.id
+    })));
   }
   getUsers();
 },[]);
@@ -81,7 +89,7 @@ useEffect(()=>{
       <Container>
         <Row>
           <Col>
-          <Button className='btnReg' variant="primary" type="submit">
+          <Button onClick={createClient} className='btnReg' variant="primary" type="submit">
             Register Business
           </Button>
           </Col>
@@ -97,9 +105,23 @@ useEffect(()=>{
           </Col>
         </Row>
       </Container>
-      
       </Form>
     </div>
+    {/* <div>
+      {user.map((user)=>{
+        return(
+          <div className='container'>
+            id : {user.c_id}<br/>
+            Company Name  : {user.company_name}<br/>
+            Company Email : {user.email}<br/>
+            Company Cell  : {user.c_phno}<br/>
+            Company Address : {user.address}<br/>
+            Company GSTIN : {user.GSTIN}<br/>
+          </div>
+        )
+      })}
+    </div> */}
+    
     </>
   );
 }
