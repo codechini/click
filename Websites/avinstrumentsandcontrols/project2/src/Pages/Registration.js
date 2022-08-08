@@ -12,17 +12,33 @@ import {
 }from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { collection, getDocs } from 'firebase/firestore'
+import { collection, getDocs, addDoc } from 'firebase/firestore'
 import { db } from '../firebase-config';
 
 const Registration = () => {
+
+const [newUser,setnewUser]=useState("");
+const [newPhno,setnewPhno]=useState(0);
+const [newEmail,setnewEmail]=useState("");
+const [newPswd,setnewPswd]=useState("");
+const [newGSTIN,setnewGSTIN]=useState("");
+const [newAddr,setnewAddr]=useState("");
+
 const [user,setUser]=useState([]);
 const userCollectionRef=collection(db,"client");
-const [item,setItem]=useState([]);
-const inventoryColl=collection(db,"inventory");
+// const [item,setItem]=useState([]);
+// const inventoryColl=collection(db,"inventory");
 
 const createClient= async()=>{
-
+  await addDoc(userCollectionRef , 
+    { 
+      company_name: newUser,
+      c_phno: Number(newPhno),
+      email: newEmail,
+      passwd: newPswd,
+      GSTIN: newGSTIN,
+      address: newAddr
+   });
 }
 
 useEffect(()=>{
@@ -44,20 +60,36 @@ useEffect(()=>{
       <Row>
       <Col sm={6} >
       <Form.Group className="mb-2" controlId="formBasicText">
-        <Form.Label id='Text' value='text' >Company Name</Form.Label>
-        <Form.Control size='sm' className='inpt' type="text" placeholder="Enter Name" />
-        <Form.Text className="text-muted">
-        </Form.Text>
+        <Form.Label>Company Name</Form.Label>
+        <Form.Control className='inpt' required
+            type="text" 
+            defaultValue="" 
+            placeholder="Company Name" 
+            onChange={(event)=>{
+              setnewUser(event.target.value)
+            }}/>
+        {/* <Form.Text className="text-muted">
+        </Form.Text> */}
       </Form.Group>
       <Form.Group className="mb-2" controlId="formBasicEmail">
         <Form.Label >Email Address</Form.Label>
-        <Form.Control size='sm' className='inpt' type="email" placeholder="Enter Email" />
+        <Form.Control className='inpt' 
+          type="email" 
+          placeholder="Enter Email"
+          onChange={(event)=>{
+            setnewEmail(event.target.value)
+          }}/>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
       <Form.Group className="mb-2" controlId="formBasicPassword">
         <Form.Label >Password</Form.Label>
-        <Form.Control size='sm' className='inpt' type="text" placeholder="Enter Password" />
+        <Form.Control className='inpt' 
+          type="password" 
+          placeholder="Enter Password"
+          onChange={(event)=>{
+            setnewPswd(event.target.value)
+          }}/>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
