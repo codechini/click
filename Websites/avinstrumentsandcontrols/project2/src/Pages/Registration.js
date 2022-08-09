@@ -111,7 +111,7 @@ useEffect(()=>{
         <Form.Label >Phone no.</Form.Label>
         <Form.Control className='inpt' 
           type="number" 
-          placeholder="Enter Email"
+          placeholder="Enter Phone no."
           onChange={(event)=>{
             setnewPhno(event.target.value)
           }}/>
@@ -122,7 +122,7 @@ useEffect(()=>{
         <Form.Label>GSTIN no.</Form.Label>
         <Form.Control className='inpt'
           type="text"
-          placeholder="Enter Email"
+          placeholder="Enter GSTIN no."
           onChange={(event)=>{
             setnewGSTIN(event.target.value)
           }} />
