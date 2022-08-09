@@ -147,7 +147,7 @@ useEffect(()=>{
         <Row>
           <Col>
           <div className="tosignup py-2">
-            Already have an Accout<Link to="/LoginPage">Login</Link>
+            Already have an Accout <Link to="/LoginPage">Login</Link>
           </div>
           </Col>
         </Row>

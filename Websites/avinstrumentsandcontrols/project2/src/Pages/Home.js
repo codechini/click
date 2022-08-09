@@ -27,8 +27,8 @@ const Home = (props) => {
       </Card.ImgOverlay>
     </Card>
     <div className="testredirect">
-      <Row className=''>
-        <Col xs={10}>
+      {/* <Row className=''>
+        <Col xs={6}>
           <p className='c1'>
             Have an equipment to test Contact us 
           </p>
@@ -36,7 +36,16 @@ const Home = (props) => {
         <Col>
           <button className='btn' href='../Payment'>Submit</button>
         </Col>
-      </Row>  
+      </Row>   */}
+
+      <div className="con1">
+          <p className='c1'>
+            Have an equipment to test Contact us 
+          </p>
+      </div>
+      <div className="con2">
+          <button className='btn' href='../Payment'>Submit</button>
+      </div>
     </div>
     {/* <Products /> */}
     </>

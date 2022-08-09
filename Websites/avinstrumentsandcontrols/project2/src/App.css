@@ -72,7 +72,7 @@ html {
 
 .frm {
     background: rgb(233, 233, 233);
-    height: 70vh;
+    height: 90vh;
     display: flex;
     padding: 0px 30px 0px 30px;
     /* margin: 0% auto; */
@@ -131,8 +131,9 @@ html {
 }
 
 .testredirect {
-    height: 50vh;
-    max-width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    height: 75vh;
 }
 
 .btn {
@@ -163,4 +164,19 @@ html {
     border: 5px black;
     display: inline-block;
     text-align: center;
+}
+
+.con1 {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    width: 100%;
+}
+
+.con2 {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    width: 300px;
+    padding-left: 35px;
 }
