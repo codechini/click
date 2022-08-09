@@ -97,20 +97,35 @@ useEffect(()=>{
       
       <Col sm={6}> 
       <Form.Group className="mb-2" controlId="formBasicEmail">
-        <Form.Label >Company Name</Form.Label>
-        <Form.Control size='sm' className='inpt' type="text" placeholder="Enter Name" />
+        <Form.Label >Company Address</Form.Label>
+        <Form.Control className='inpt' 
+          type="text" 
+          placeholder="Enter Name"
+          onChange={(event)=>{
+            setnewAddr(event.target.value)
+          }}/>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
       <Form.Group className="mb-2" controlId="formBasicEmail">
-        <Form.Label >Email Address</Form.Label>
-        <Form.Control size='sm' className='inpt' type="email" placeholder="Enter Email" />
+        <Form.Label >Phone no.</Form.Label>
+        <Form.Control className='inpt' 
+          type="number" 
+          placeholder="Enter Email"
+          onChange={(event)=>{
+            setnewPhno(event.target.value)
+          }}/>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
       <Form.Group className="mb-2" controlId="formBasicEmail">
-        <Form.Label >Email Address</Form.Label>
-        <Form.Control size='sm' className='inpt' type="text" placeholder="Enter Email" />
+        <Form.Label>GSTIN no.</Form.Label>
+        <Form.Control className='inpt'
+          type="text"
+          placeholder="Enter Email"
+          onChange={(event)=>{
+            setnewGSTIN(event.target.value)
+          }} />
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
