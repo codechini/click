@@ -4,7 +4,6 @@ import {
   Row,
   Col,
   Navbar,
-  Nav,
   // Form,
   Container,
   Button,
@@ -100,7 +99,7 @@ useEffect(()=>{
         <Form.Label >Company Address</Form.Label>
         <Form.Control className='inpt' 
           type="text" 
-          placeholder="Enter Name"
+          placeholder="Enter Address"
           onChange={(event)=>{
             setnewAddr(event.target.value)
           }}/>
