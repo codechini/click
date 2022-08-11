@@ -96,17 +96,6 @@ useEffect(()=>{
       
       <Col sm={6}> 
       <Form.Group className="mb-2" controlId="formBasicEmail">
-        <Form.Label >Company Address</Form.Label>
-        <Form.Control className='inpt' 
-          type="text" 
-          placeholder="Enter Address"
-          onChange={(event)=>{
-            setnewAddr(event.target.value)
-          }}/>
-        <Form.Text className="text-muted">
-        </Form.Text>
-      </Form.Group>
-      <Form.Group className="mb-2" controlId="formBasicEmail">
         <Form.Label >Phone no.</Form.Label>
         <Form.Control className='inpt' 
           type="number" 
@@ -125,6 +114,18 @@ useEffect(()=>{
           onChange={(event)=>{
             setnewGSTIN(event.target.value)
           }} />
+        <Form.Text className="text-muted">
+        </Form.Text>
+      </Form.Group>
+      <Form.Group className="mb-2" controlId="formBasicEmail">
+        <Form.Label >Company Address</Form.Label>
+        <Form.Control className='inpt' 
+          type="text"
+          as="textarea"
+          placeholder="Enter Address"
+          onChange={(event)=>{
+            setnewAddr(event.target.value)
+          }}/>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
