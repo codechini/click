@@ -8,6 +8,7 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import pic from '../imgs/p2.jpg';
 import Products from '../components/Products';
+import { Link } from 'react-router-dom';
 
 
 const Home = (props) => {
@@ -40,11 +41,16 @@ const Home = (props) => {
 
       <div className="con1">
           <p className='c1'>
-            Have an equipment to test Contact us 
+            Learn more about our Testing services 
           </p>
       </div>
       <div className="con2">
-          <button className='btn' href='../Payment'>Submit</button>
+          <Link 
+            className='btn' 
+            to='/TestingPage' 
+            style={{ color: '#ffab58',fontSize:'24px' }}>
+              Learn More
+          </Link>
       </div>
     </div>
     {/* <Products /> */}
