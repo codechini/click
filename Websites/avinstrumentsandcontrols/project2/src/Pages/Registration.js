@@ -11,6 +11,7 @@ import {
 }from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import { ValidatedInput } from 'react-bootstrap-validation';
 import { collection, getDocs, addDoc } from 'firebase/firestore'
 import { db } from '../firebase-config';
 
