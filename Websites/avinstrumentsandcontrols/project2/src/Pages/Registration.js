@@ -60,7 +60,11 @@ function validate(){
   createClient();
 }
 
-function validateCompanyName(){}
+function validateCompanyName(){
+}
+function validateEmail(){}
+function validatePhno(){}
+function validateAddress(){}
 
   return (
     <>
@@ -71,9 +75,11 @@ function validateCompanyName(){}
       <Col sm={6} >
       <Form.Group className="mb-2" controlId="formBasicText">
         <Form.Label>Company Name</Form.Label>
-        <Form.Control className='inpt' required
+        <Form.Control className='inpt' 
+            required
             type="text" 
-            defaultValue="" 
+            defaultValue=""
+            name='cname'
             placeholder="Company Name" 
             onChange={(event)=>{
               setnewUser(event.target.value)
@@ -83,7 +89,8 @@ function validateCompanyName(){}
       </Form.Group>
       <Form.Group className="mb-2" controlId="formBasicEmail">
         <Form.Label >Email Address</Form.Label>
-        <Form.Control className='inpt' 
+        <Form.Control className='inpt'
+          required
           type="email" 
           placeholder="Enter Email"
           onChange={(event)=>{
@@ -94,7 +101,8 @@ function validateCompanyName(){}
       </Form.Group>
       <Form.Group className="mb-2" controlId="formBasicPassword">
         <Form.Label >Password</Form.Label>
-        <Form.Control className='inpt' 
+        <Form.Control className='inpt'
+          required 
           type="password" 
           placeholder="Enter Password"
           onChange={(event)=>{
@@ -108,7 +116,8 @@ function validateCompanyName(){}
       <Col sm={6}> 
       <Form.Group className="mb-2" controlId="formBasicEmail">
         <Form.Label >Phone no.</Form.Label>
-        <Form.Control className='inpt' 
+        <Form.Control className='inpt'
+        required 
           type="number" 
           placeholder="Enter Phone no."
           onChange={(event)=>{
@@ -120,6 +129,7 @@ function validateCompanyName(){}
       <Form.Group className="mb-2" controlId="formBasicEmail">
         <Form.Label>GSTIN no.</Form.Label>
         <Form.Control className='inpt'
+        required
           type="text"
           placeholder="Enter GSTIN no."
           onChange={(event)=>{
@@ -131,6 +141,7 @@ function validateCompanyName(){}
       <Form.Group className="mb-2" controlId="formBasicEmail">
         <Form.Label >Company Address</Form.Label>
         <Form.Control className='inpt' 
+          required
           type="text"
           as="textarea"
           placeholder="Enter Address"
@@ -147,7 +158,7 @@ function validateCompanyName(){}
       <Container>
         <Row>
           <Col>
-          <Button onClick={this.validate} className='btnReg' variant="primary" type="submit">
+          <Button onClick={()=>{createClient();validateCompanyName()}} className='btnReg' variant="primary" type="submit">
             Register Business
           </Button>
           </Col>
