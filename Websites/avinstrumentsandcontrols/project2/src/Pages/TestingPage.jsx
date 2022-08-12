@@ -16,7 +16,6 @@ const TestingPage = () => {
           <p className="infotxt">
             If you wish to test your testing equipment please fill up the form and mail/courrier the item to us At the below given Address.
           </p>
-        
       </div>
       <div className='frm justify-content-center align-items-center'>
         <Form>

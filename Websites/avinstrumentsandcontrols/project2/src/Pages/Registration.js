@@ -53,6 +53,14 @@ useEffect(()=>{
   getUsers();
 },[]);
 
+//VALIDATION
+
+function validate(){
+  validateCompanyName();
+  createClient();
+}
+
+function validateCompanyName(){}
 
   return (
     <>
@@ -139,7 +147,7 @@ useEffect(()=>{
       <Container>
         <Row>
           <Col>
-          <Button onClick={createClient} className='btnReg' variant="primary" type="submit">
+          <Button onClick={this.validate} className='btnReg' variant="primary" type="submit">
             Register Business
           </Button>
           </Col>
