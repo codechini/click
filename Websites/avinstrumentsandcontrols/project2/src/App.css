@@ -58,7 +58,7 @@ html {
 }
 
 .links:hover {
-    color: rgb(231, 231, 231);
+    color: rgb(33, 37, 41);
 }
 
 .ftr {
@@ -142,6 +142,7 @@ html {
 .btn {
     text-align: center;
     background-color: #4CAF50;
+    /* border: none; */
     color: white;
     text-align: center;
     text-decoration: none;
@@ -150,8 +151,8 @@ html {
 }
 
 .btn:hover {
-    border: none;
-    color: #ffab58;
+    /* border: none; */
+    /* color: #ffab58; */
 }
 
 .c1 {
@@ -186,6 +187,7 @@ html {
 }
 
 .infotxt {
-    font-size: 26px;
+    font-size: 28px;
     align-items: center;
+    width: 100%;
 }

@@ -13,13 +13,12 @@ const TestingPage = () => {
   return (
     <>
       <div className='frm justify-content-center align-items-center'>
-        <Row>
-        <Col className='con1'>
-          <div className="infotxt">
+          <p className="infotxt">
             If you wish to test your testing equipment please fill up the form and mail/courrier the item to us At the below given Address.
-          </div>
-        </Col>
-        <Col className='con2'>
+          </p>
+        
+      </div>
+      <div className='frm justify-content-center align-items-center'>
         <Form>
           <Form.Text className='regTitle'></Form.Text>
           <Form.Group className="mb-3" controlId="formGroupEmail">
@@ -35,9 +34,7 @@ const TestingPage = () => {
             <Form.Control type="textarea" placeholder="Description" />
           </Form.Group>
         </Form>
-        </Col>
-        </Row>
-      </div>
+        </div>
     </>
   )
 }

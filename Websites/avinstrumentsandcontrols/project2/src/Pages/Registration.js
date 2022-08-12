@@ -23,6 +23,8 @@ const [newPswd,setnewPswd]=useState("");
 const [newGSTIN,setnewGSTIN]=useState("");
 const [newAddr,setnewAddr]=useState("");
 
+const [errors, setErrors]=useState({});
+
 const [user,setUser]=useState([]);
 const userCollectionRef=collection(db,"client");
 // const [item,setItem]=useState([]);
@@ -50,6 +52,7 @@ useEffect(()=>{
   }
   getUsers();
 },[]);
+
 
   return (
     <>
