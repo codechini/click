@@ -42,8 +42,8 @@ html {
 }
 
 .brand {
-    font-size: 22px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 650;
     text-decoration: none;
     color: rgb(46, 81, 206);
 }
@@ -71,10 +71,11 @@ html {
 }
 
 .frm {
-    background: rgb(233, 233, 233);
+    background: rgb(205, 205, 205);
     height: 90vh;
     display: flex;
-    padding: 0px 30px 0px 30px;
+    padding: 0px 0px 0px 0px;
+    margin: 20px 20px 40px 20px;
     justify-content: flex-start;
     /* margin: 0% auto; */
 }
@@ -85,6 +86,7 @@ html {
 
 .btnReg {
     padding: 0px 10px 2px 10px;
+    margin-top: 7px;
     background: rgb(46, 81, 206);
     color: rgb(255, 255, 255);
     font-size: 28px;

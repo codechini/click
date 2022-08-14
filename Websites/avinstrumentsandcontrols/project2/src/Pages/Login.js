@@ -20,8 +20,8 @@ const Login = () => {
   const[isToggled,setTogggled]=useState(false);
   return (
     <>
-    <div className="frm justify-content-center align-items-center">
-      <Form className=''>
+    <div className="frm rounded justify-content-center align-items-center">
+      <Form className='mx-3'>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label >Email Address</Form.Label>
         <Form.Control size='lg' id='C_email' className='inpt' type="email" placeholder="Enter Name" />
