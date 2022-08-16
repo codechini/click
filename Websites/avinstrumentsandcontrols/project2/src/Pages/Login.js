@@ -24,13 +24,26 @@ const Login = () => {
       <Form className='mx-3'>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label >Email Address</Form.Label>
-        <Form.Control size='lg' id='C_email' className='inpt' type="email" placeholder="Enter Name" />
+        <Form.Control 
+          required
+          size='lg' 
+          id='C_email' 
+          className='inpt' 
+          type="email" 
+          placeholder="Enter Name"
+           />
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label >Password</Form.Label>
-        <Form.Control size='lg' className='psswd' type="password" placeholder="Enter Name" />
+        <Form.Control 
+          required
+          size='lg' 
+          className='psswd' 
+          type="password" 
+          placeholder="Enter Name"
+           />
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
