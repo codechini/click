@@ -22,14 +22,13 @@ const Login = () => {
     <>
     <div className="frm rounded justify-content-center align-items-center">
       <Form className='mx-3'>
+      <span className='regTitle py-3'>Login</span>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label >Email Address</Form.Label>
         <Form.Control 
           required
           size='lg' 
-          id='C_email' 
-          className='inpt' 
-          type="email" 
+          
           placeholder="Enter Name"
            />
         <Form.Text className="text-muted">

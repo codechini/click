@@ -1,4 +1,5 @@
 import React, {useState,useEffect} from 'react';
+import { getAuth } from "firebase/auth";
 import {
   Alert,
   Row,
@@ -35,7 +36,6 @@ const [isSubmit,setSubmit]=useState(false);
 
 // const [bill,setBill] = useState([]);
 // const billCollectionRef = collection(db,"billing");
-
 const createClient= async()=>{
   await addDoc(userCollectionRef , 
     { 
@@ -49,8 +49,7 @@ const createClient= async()=>{
 }
 
 useEffect(()=>{
-  if(Object.keys(errors).length === 0 && isSubmit){
-    console.log(user)
+  
     const getUsers = async()=>{
     const clientData=await getDocs(userCollectionRef);
     setUser(clientData.docs.map((doc)=>({
@@ -58,7 +57,6 @@ useEffect(()=>{
     })));
   }
   getUsers();
-}
   // const getItems = async()=>{
   //   const itemData=await getDocs(inventoryCollectionRef);
   //   // console.log(clientData);
@@ -83,69 +81,33 @@ useEffect(()=>{
   // getItems();
   // getBill();
   // getTest();
-},[errors]);
+},[]);
 
 //VALIDATION
-const handleSubmit=(e)=>{
-  e.preventDefault();
-  setErrors(validate(user));
-  setSubmit(true);
-};
 
-const validate =(values)=>{
-  const errors={};
-  const company_name=/[a-zA-Z]+/;
-  const email_regrex= /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
-  const pass = /^\S*(?=\S{8,})(?=\S*\d)(?=\S*[A-Z])(?=\S*[a-z])(?=\S*[!@#$%^&? ])\S$/;
-//company Name
-if(!values.cname){
-  console.log(!company_name.cname)
-  errors.cname="Cannot be empty"
-}
-else if(!company_name.test(values.cname)){
-  errors.cname="*Please enter a valid Name";
-}
-// Email
-
-if(!values.email){
-  errors.email="Cannot be empty";
-}
-else if(!email_regrex.test(values.email)){
-  errors.email="*Please enter a valid email-id";
-}
-
-
-if(!values.password){
-  errors.password="*Please enter a password";
-}
-else if(!pass.test(values.password)){
-  errors.password="*Password must contain atleast one Uppercase letters, special characters, number and atleast 8 characters";
-}
-  return errors
-};
 
   return (
     <>
       <div className="frm rounded justify-content-center align-items-center">
-      <Form className='mx-3 justify-items-center'>
+      <Form className='mx-3 justify-items-center' onSubmit={createClient}>
       <span className='regTitle'>Register your Company</span>
       <Row>
       <Col sm={6} >
-      <Form.Group className="mb-2" controlId="formBasicText" onSubmit={handleSubmit}>
-      {/* onSubmit={Validate} */}
+      <Form.Group className="mb-2" controlId="formBasicText">
+      {/* onSubmit={handleSubmit} */}
         <Form.Label>Company Name</Form.Label>
         <Form.Control className='inpt' 
             // required
             controlId='cname'
             name='cname'
-            value={user.cname}
+            // value={cname}
             type="text" 
             placeholder="Company Name" 
             onChange={
               (event)=>{
                   setnewUser(event.target.value)
             }}/>
-            <p>{errors.cname}</p>
+            <p>{errors.newUser}</p>
       </Form.Group>
       <Form.Group className="mb-2" controlId="formBasicEmail">
         <Form.Label >Email Address</Form.Label>
@@ -157,7 +119,7 @@ else if(!pass.test(values.password)){
           value={user.email}
           placeholder="Enter Email"
           onChange={(event)=>{
-              console.log(event.target.value);
+              // console.log(event.target.value);
               setnewEmail(event.target.value);
           }}/>
           <p>{errors.email}</p>
@@ -237,7 +199,8 @@ else if(!pass.test(values.password)){
       <Container>
         <Row>
           <Col>
-          <Button onClick={handleSubmit} className='btnReg' variant="primary" type="submit">
+          <Button  className='btnReg' variant="primary" type="submit">
+          {/* onClick={handleSubmit} */}
             Register Business
           </Button>
           </Col>
