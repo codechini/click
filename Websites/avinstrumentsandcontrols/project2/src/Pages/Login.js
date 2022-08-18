@@ -27,8 +27,6 @@ const Login = () => {
         <Form.Label >Email Address</Form.Label>
         <Form.Control 
           required
-          size='lg' 
-          
           placeholder="Enter Name"
            />
         <Form.Text className="text-muted">
@@ -38,9 +36,7 @@ const Login = () => {
         <Form.Label >Password</Form.Label>
         <Form.Control 
           required
-          size='lg' 
-          className='psswd' 
-          type="password" 
+          size='lg'
           placeholder="Enter Name"
            />
         <Form.Text className="text-muted">
