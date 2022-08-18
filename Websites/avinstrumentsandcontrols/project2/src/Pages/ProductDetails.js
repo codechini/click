@@ -1,5 +1,7 @@
-import React from 'react';
+import {React,useState} from 'react';
+import { Link } from 'react-router-dom';
 import Products from '../components/Products';
+import Pdf1 from '../docs/Hydraulic Hand Pump.pdf'
 import {
   Row,
   Button,
@@ -11,10 +13,29 @@ import pic1 from '../imgs/p1.jpg';
 import pic3 from '../imgs/p3.jpg';
 
 const ProductDetails = () => {
+  const [shown, setShown] = useState(false);
   return (
     <>
     <div className='container'>
       <Row>
+        <Col className='productpad'>
+        <Products imgsrc={pic3}/>
+        </Col>
+        <Col className='detailPad px-0'>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit tempore quae cupiditate quasi eveniet eius dolore labore blanditiis ipsa fugit voluptatem quod id, eum et sit numquam, consectetur minus alias!
+        </p>
+        <Link to="/checkOut" className='btn'>Check out</Link>
+        </Col>
+      </Row>
+      <div>
+        <button className='btn my-3 px-5' onClick={() => setShown(!shown)}>See Documentation</button>
+          {shown?<iframe src={Pdf1} allowFullScreen frameborder="0" width="100%" height="650px"></iframe>:null}
+        </div>
+      
+    
+    
+      {/* <Row>
       <Col>
         <Products imgsrc={pic3}/>
       </Col>
@@ -31,7 +52,7 @@ const ProductDetails = () => {
       </Card.Body>
     </Card>
       </Col>
-      </Row>
+      </Row> */}
     </div>
       
     </>

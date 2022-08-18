@@ -193,3 +193,11 @@ html {
     align-items: center;
     width: 100%;
 }
+
+.detailPad {
+    padding-top: 100px;
+}
+
+.productpad {
+    padding-left: 30px;
+}
