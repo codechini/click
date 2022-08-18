@@ -28,10 +28,7 @@ const ProductDetails = () => {
         <Link to="/checkOut" className='btn'>Check out</Link>
         </Col>
       </Row>
-      <div>
-        <button className='btn my-3 px-5' onClick={() => setShown(!shown)}>See Documentation</button>
-          {shown?<iframe src={Pdf1} allowFullScreen frameborder="0" width="100%" height="650px"></iframe>:null}
-        </div>
+      
       
     
     
@@ -54,7 +51,10 @@ const ProductDetails = () => {
       </Col>
       </Row> */}
     </div>
-      
+    <div className='px-5'>
+        <button className='btn my-3 px-5' onClick={() => setShown(!shown)}>See Documentation</button>
+          {shown?<iframe src={Pdf1} allowFullScreen frameborder="0" width="100%" height="700px"></iframe>:null}
+      </div>
     </>
   )
 }
