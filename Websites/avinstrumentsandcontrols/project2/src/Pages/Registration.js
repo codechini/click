@@ -25,10 +25,12 @@ const [newAddr,setnewAddr]=useState("");
 
 const [user,setUser]=useState([]);
 const userCollectionRef=collection(db,"client");
-const [errors, setErrors] = useState({});
+// const [errors, setErrors] = useState({});
 
 const [isSubmit,setSubmit]=useState(false);
 
+const {register,formState: { errors },handleSubmit} = useForm();
+// const onSubmit = (data) => console.log(data);
 // const [item,setItem]=useState([]);
 // const inventoryCollectionRef=collection(db,"inventory");
 
@@ -89,10 +91,11 @@ useEffect(()=>{
 //VALIDATION
 
 
+
   return (
     <>
       <div className="frm rounded justify-content-center align-items-center">
-      <Form className='mx-3 justify-items-center' onSubmit={createClient}>
+      <Form className='mx-3 justify-items-center' onSubmit={handleSubmit(createClient)}>
       <span className='regTitle'>Register your Company</span>
       <Row>
       <Col sm={6} >
@@ -106,11 +109,12 @@ useEffect(()=>{
             // value={cname}
             type="text" 
             placeholder="Company Name" 
+            {...register("cname", { required: true })}
             onChange={
               (event)=>{
                   setnewUser(event.target.value)
             }}/>
-            <p>{errors.newUser}</p>
+            <p>{errors.cname?.type === "required" && "Name is required"}</p>
       </Form.Group>
       <Form.Group className="mb-2" controlId="formBasicEmail">
         <Form.Label >Email Address</Form.Label>
