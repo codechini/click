@@ -21,8 +21,8 @@ const Login = () => {
   return (
     <>
     <div className="frm rounded justify-content-center align-items-center">
-      <Form className='mx-3'>
-      <span className='regTitle py-3'>Login</span>
+      <Form className='mx-3 py-5'>
+      <span className='regTitle'>Login</span>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label >Email Address</Form.Label>
         <Form.Control 

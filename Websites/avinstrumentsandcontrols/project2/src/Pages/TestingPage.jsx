@@ -12,13 +12,15 @@ import {
 const TestingPage = () => {
   return (
     <>
-      <div className='frm justify-content-center align-items-center'>
+      <div className='justify-content-center align-items-center'>
           <p className="infotxt">
             If you wish to test your testing equipment please fill up the form and mail/courrier the item to us At the below given Address.
           </p>
       </div>
-      <div className='frm justify-content-center align-items-center'>
+      <div className='frm rounded justify-content-center align-items-center'>
+        
         <Form>
+          <span className='regTitle'>Shipping details</span>
           <Form.Text className='regTitle'></Form.Text>
           <Form.Group className="mb-3" controlId="formGroupEmail">
             <Form.Label>Email address</Form.Label>

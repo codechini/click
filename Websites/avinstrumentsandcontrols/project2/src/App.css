@@ -2,7 +2,7 @@ html {
     background: rgb(33, 37, 41);
 }
 
-p {
+.err {
     color: red;
     font-size: 13px;
 }
@@ -77,7 +77,7 @@ p {
 
 .frm {
     background: rgb(205, 205, 205);
-    height: 90vh;
+    height: auto;
     display: flex;
     padding: 0px 0px 0px 0px;
     margin: 20px 20px 40px 20px;
@@ -103,7 +103,9 @@ p {
 
 .regTitle {
     font-size: 36px;
-    padding-top: 1rem;
+    font-style: italic;
+    font-weight: 600;
+    color: rgb(46, 81, 206);
 }
 
 .card {
@@ -141,9 +143,11 @@ p {
 .testredirect {
     display: flex;
     justify-content: flex-start;
-    height: 75vh;
-    background: rgb(255, 215, 215);
+    height: 555px;
+    background: rgb(244, 243, 245);
     background-image: url("imgs/test.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
 }
 
 .btn {
@@ -197,6 +201,7 @@ p {
     font-size: 28px;
     align-items: center;
     width: 100%;
+    padding: 5px 15px;
 }
 
 .detailPad {

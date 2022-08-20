@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import { useForm } from 'react-hook-form';
+// import { useForm } from 'react-hook-form';
 import { getAuth } from "firebase/auth";
 import {
   Alert,
@@ -29,7 +29,7 @@ const userCollectionRef=collection(db,"client");
 
 const [isSubmit,setSubmit]=useState(false);
 
-const {register,formState: { errors },handleSubmit} = useForm();
+// const {register,formState: { errors },handleSubmit} = useForm();
 // const onSubmit = (data) => console.log(data);
 // const [item,setItem]=useState([]);
 // const inventoryCollectionRef=collection(db,"inventory");
@@ -95,7 +95,7 @@ useEffect(()=>{
   return (
     <>
       <div className="frm rounded justify-content-center align-items-center">
-      <Form className='mx-3 justify-items-center' onSubmit={handleSubmit(createClient)}>
+      <Form className='mx-3 justify-items-center' >
       <span className='regTitle'>Register your Company</span>
       <Row>
       <Col sm={6} >
@@ -112,8 +112,8 @@ useEffect(()=>{
               (event)=>{
                   setnewUser(event.target.value)
             }}/>
-            <p>*Cannnot be empty</p>
-            <p>*Cannnot contain Numbers</p>
+            <p className='err'>*Cannnot be empty</p>
+            <p className='err'>*Cannnot contain Numbers</p>
       </Form.Group>
       <Form.Group className="mb-2" controlId="formBasicEmail">
         <Form.Label >Email Address</Form.Label>
@@ -129,8 +129,8 @@ useEffect(()=>{
               // console.log(event.target.value);
               setnewEmail(event.target.value);
           }}/>
-          <p>*Cannnot be empty</p>
-          <p>*Invalid Email</p>
+          <p className='err'>*Cannnot be empty</p>
+          <p className='err'>*Invalid Email</p>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
@@ -146,9 +146,9 @@ useEffect(()=>{
           onChange={(event)=>{
             setnewPswd(event.target.value)
           }}/>
-          <p>*Cannnot be empty</p>
-          <p>*Must contain atleast a number</p>
-          <p>*Must contain atleast a Capital letter</p>
+          <p className='err'>*Cannnot be empty</p>
+          <p className='err'>*Must contain atleast a number</p>
+          <p className='err'>*Must contain atleast a Capital letter</p>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
@@ -167,8 +167,8 @@ useEffect(()=>{
           onChange={(event)=>{
             setnewPhno(event.target.value);
           }}/>
-          <p>*Cannnot be empty</p>
-          <p>*Number cannot exceed 10 digits</p>
+          <p className='err'>*Cannnot be empty</p>
+          <p className='err'>*Number cannot exceed 10 digits</p>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
@@ -183,7 +183,7 @@ useEffect(()=>{
           onChange={(event)=>{
             setnewGSTIN(event.target.value)
           }} />
-          <p>*Cannnot be empty</p>
+          <p className='err'>*Cannnot be empty</p>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
@@ -197,7 +197,7 @@ useEffect(()=>{
           onChange={(event)=>{
             setnewAddr(event.target.value)
           }}/>
-          <p>*Cannnot be empty</p>
+          <p className='err'>*Cannnot be empty</p>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
