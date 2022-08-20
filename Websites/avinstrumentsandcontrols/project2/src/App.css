@@ -2,6 +2,11 @@ html {
     background: rgb(33, 37, 41);
 }
 
+p {
+    color: red;
+    font-size: 13px;
+}
+
 .carttxt {
     /* display: none; */
     font-size: 12px;

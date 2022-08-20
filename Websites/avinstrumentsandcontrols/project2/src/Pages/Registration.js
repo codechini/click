@@ -103,18 +103,17 @@ useEffect(()=>{
       {/* onSubmit={handleSubmit} */}
         <Form.Label>Company Name</Form.Label>
         <Form.Control className='inpt' 
-            // required
-            controlId='cname'
+            required
             name='cname'
-            // value={cname}
-            type="text" 
+            value={newUser}
+            autoComplete='off'
             placeholder="Company Name" 
-            {...register("cname", { required: true })}
             onChange={
               (event)=>{
                   setnewUser(event.target.value)
             }}/>
-            <p>{errors.cname?.type === "required" && "Name is required"}</p>
+            <p>*Cannnot be empty</p>
+            <p>*Cannnot contain Numbers</p>
       </Form.Group>
       <Form.Group className="mb-2" controlId="formBasicEmail">
         <Form.Label >Email Address</Form.Label>
@@ -122,14 +121,16 @@ useEffect(()=>{
           className='inpt'
           // required
           name='email'
+          value={newEmail}
           type="email"
-          value={user.email}
+          autoComplete='off'
           placeholder="Enter Email"
           onChange={(event)=>{
               // console.log(event.target.value);
               setnewEmail(event.target.value);
           }}/>
-          <p>{errors.email}</p>
+          <p>*Cannnot be empty</p>
+          <p>*Invalid Email</p>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
@@ -137,14 +138,17 @@ useEffect(()=>{
         <Form.Label >Password</Form.Label>
         <Form.Control 
           className='inpt'
-          // required 
+          required 
           name='password'
+          value={newPswd}
           type="password"
-          // value={ inptValues.password}
           placeholder="Enter Password"
           onChange={(event)=>{
             setnewPswd(event.target.value)
           }}/>
+          <p>*Cannnot be empty</p>
+          <p>*Must contain atleast a number</p>
+          <p>*Must contain atleast a Capital letter</p>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
@@ -155,47 +159,45 @@ useEffect(()=>{
         <Form.Label >Phone no.</Form.Label>
         <Form.Control 
           className='inpt'
+          required
           name='phno'
-          // required 
+          value={newPhno}
           type="number"
           placeholder="Enter Phone no."
           onChange={(event)=>{
             setnewPhno(event.target.value);
-            if(event.target.value.match('[0-9]{10}')){
-              <Alert variant="success">
-                Please provide valid phone number!
-              </Alert>
-            }
           }}/>
+          <p>*Cannnot be empty</p>
+          <p>*Number cannot exceed 10 digits</p>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
       <Form.Group className="mb-2" controlId="formBasicEmail">
         <Form.Label>GSTIN no.</Form.Label>
         <Form.Control className='inpt'
-        // required
+          required
           type="text"
           name='gstin'
-          // value={ inptValues.gstin}
+          value={newGSTIN}
           placeholder="Enter GSTIN no."
           onChange={(event)=>{
             setnewGSTIN(event.target.value)
           }} />
+          <p>*Cannnot be empty</p>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
       <Form.Group className="mb-2" controlId="formBasicEmail">
         <Form.Label >Company Address</Form.Label>
         <Form.Control className='inpt' 
-          // required
           type="text"
           name='addr'
-          // value={ inptValues.addr}
           as="textarea"
           placeholder="Enter Address"
           onChange={(event)=>{
             setnewAddr(event.target.value)
           }}/>
+          <p>*Cannnot be empty</p>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
