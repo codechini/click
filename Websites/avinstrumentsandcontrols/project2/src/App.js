@@ -9,6 +9,7 @@ import Reg from './Pages/Registration';
 import login from './Pages/Login';
 import ProductPage from './Pages/ProductPage';
 import TestingPage from './Pages/TestingPage';
+import Payment from './Pages/Payment';
 
 import { db } from '../src/firebase-config';
 
@@ -43,9 +44,11 @@ function App() {
         <Route path='/LearnMore' element={<LearnMore />}/>
         <Route path ='/RegPage' element={<Reg />}/>
         <Route path ='/LoginPage' element={<Login />}/>
-        <Route path ='/ProductDetails' element={<ProductDetails />}/>
+        <Route path ='/ProductDetails' element={<ProductDetails />}>
+          <Route path ='Payment' element={<Payment />}/>  
+        </Route>
         <Route path='/TestingPage' element={<TestingPage />}/>
-      </Routes>
+        </Routes>
       
       <Footer l1='Contact Us' />
 

@@ -1,7 +1,8 @@
 import {React,useState} from 'react';
 import { Link } from 'react-router-dom';
 import Products from '../components/Products';
-import Pdf1 from '../docs/Hydraulic Hand Pump.pdf'
+import Pdf1 from '../docs/Hydraulic Hand Pump.pdf';
+import Payment from '../Pages/Payment';
 import {
   Row,
   Button,
@@ -25,7 +26,7 @@ const ProductDetails = () => {
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit tempore quae cupiditate quasi eveniet eius dolore labore blanditiis ipsa fugit voluptatem quod id, eum et sit numquam, consectetur minus alias!
         </p>
-        <Link to="/checkOut" className='btn'>Check out</Link>
+        <Link to="/Payment" className='btn'>Check out</Link>
         </Col>
       </Row>
       
