@@ -1,6 +1,8 @@
 import React, {useState,useEffect} from 'react';
 // import { useForm } from 'react-hook-form';
-import { getAuth } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import {auth} from '../firebase-config';
 import {
   Alert,
   Row,
@@ -11,8 +13,9 @@ import {
 }from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { collection, getDocs, addDoc } from 'firebase/firestore'
+import { collection, getDocs, addDoc } from 'firebase/firestore';
 import { db } from '../firebase-config';
+import ProductPage from '../Pages/ProductPage';
 
 const Registration = () => {
 
@@ -27,10 +30,6 @@ const [user,setUser]=useState([]);
 const userCollectionRef=collection(db,"client");
 // const [errors, setErrors] = useState({});
 
-const [isSubmit,setSubmit]=useState(false);
-
-// const {register,formState: { errors },handleSubmit} = useForm();
-// const onSubmit = (data) => console.log(data);
 // const [item,setItem]=useState([]);
 // const inventoryCollectionRef=collection(db,"inventory");
 
@@ -90,12 +89,27 @@ useEffect(()=>{
 
 //VALIDATION
 
+// const getAuth=;
+const register= async()=>{
+  try{
+    const user= await createUserWithEmailAndPassword(auth,newEmail,newPswd);
+    console.log(user);
+  }
+  catch(errors){
+    console.log(errors.message);
+  }
+  
+}
+
+// Redirection
+const navigate = useNavigate();
+
 
 
   return (
     <>
       <div className="frm rounded justify-content-center align-items-center">
-      <Form className='mx-3 justify-items-center' >
+      <Form className='mx-3 justify-items-center'>
       <span className='regTitle'>Register your Company</span>
       <Row>
       <Col sm={6} >
@@ -105,6 +119,7 @@ useEffect(()=>{
         <Form.Control className='inpt' 
             required
             name='cname'
+            type={"text"}
             value={newUser}
             autoComplete='off'
             placeholder="Company Name" 
@@ -122,11 +137,11 @@ useEffect(()=>{
           // required
           name='email'
           value={newEmail}
-          type="email"
+          type={"email"}
           autoComplete='off'
           placeholder="Enter Email"
           onChange={(event)=>{
-              // console.log(event.target.value);
+              console.log(event.target.value);
               setnewEmail(event.target.value);
           }}/>
           <p className='err'>*Cannnot be empty</p>
@@ -208,7 +223,7 @@ useEffect(()=>{
       <Container>
         <Row>
           <Col>
-          <Button  className='btnReg' variant="primary" type="submit">
+          <Button onClick={()=>{register();createClient();navigate("/ProductPage") }} className='btnReg' variant="primary" type="submit">
           {/* onClick={handleSubmit} */}
             Register Business
           </Button>

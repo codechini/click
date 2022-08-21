@@ -18,16 +18,26 @@ import Home from './Home';
 
 const Login = () => {
   const[isToggled,setTogggled]=useState(false);
+  const [newEmail,setnewEmail]=useState("");
+  const [newPswd,setnewPswd]=useState("");
+
+  const login= async()=>{
+
+  }
   return (
     <>
     <div className="frm rounded justify-content-center align-items-center">
-      <Form className='mx-3 py-5'>
+      <Form className='mx-3 py-5' onSubmit={login}>
       <span className='regTitle'>Login</span>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label >Email Address</Form.Label>
         <Form.Control 
           required
           placeholder="Enter Name"
+          onChange={
+            (event)=>{
+                setnewEmail(event.target.value)
+          }}
            />
         <Form.Text className="text-muted">
         </Form.Text>
@@ -38,6 +48,10 @@ const Login = () => {
           required
           size='lg'
           placeholder="Enter Name"
+          onChange={
+            (event)=>{
+                setnewPswd(event.target.value)
+          }}
            />
         <Form.Text className="text-muted">
         </Form.Text>
