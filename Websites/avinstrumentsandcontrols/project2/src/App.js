@@ -44,9 +44,8 @@ function App() {
         <Route path='/LearnMore' element={<LearnMore />}/>
         <Route path ='/RegPage' element={<Reg />}/>
         <Route path ='/LoginPage' element={<Login />}/>
-        <Route path ='/ProductDetails' element={<ProductDetails />}>
-          <Route path ='Payment' element={<Payment />}/>  
-        </Route>
+        <Route path ='/ProductDetails' element={<ProductDetails />}/>
+        <Route path ='Payment' element={<Payment />}/>
         <Route path='/TestingPage' element={<TestingPage />}/>
         </Routes>
       

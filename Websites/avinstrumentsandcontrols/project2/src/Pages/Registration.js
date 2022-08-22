@@ -170,7 +170,7 @@ const navigate = useNavigate();
       </Col>
       
       <Col sm={6}> 
-      <Form.Group className="mb-2" controlId="formBasicEmail">
+      <Form.Group className="mb-2">
         <Form.Label >Phone no.</Form.Label>
         <Form.Control 
           className='inpt'
@@ -187,7 +187,7 @@ const navigate = useNavigate();
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
-      <Form.Group className="mb-2" controlId="formBasicEmail">
+      <Form.Group className="mb-2" >
         <Form.Label>GSTIN no.</Form.Label>
         <Form.Control className='inpt'
           required
@@ -202,7 +202,7 @@ const navigate = useNavigate();
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
-      <Form.Group className="mb-2" controlId="formBasicEmail">
+      <Form.Group className="mb-2">
         <Form.Label >Company Address</Form.Label>
         <Form.Control className='inpt' 
           type="text"
@@ -223,8 +223,8 @@ const navigate = useNavigate();
       <Container>
         <Row>
           <Col>
-          <Button onClick={()=>{register();createClient();navigate("/ProductPage") }} className='btnReg' variant="primary" type="submit">
-          {/* onClick={handleSubmit} */}
+          <Button onClick={()=>{register();createClient() }} className='btnReg' variant="primary" type="submit">
+          {/* onClick={handleSubmit}  ;navigate("/ProductPage") */}
             Register Business
           </Button>
           </Col>
@@ -237,6 +237,9 @@ const navigate = useNavigate();
           <div className="tosignup py-2">
             Already have an Accout <Link to="/LoginPage">Login</Link>
           </div>
+          {/* <div>
+            logged in is:{auth.currentUser.email}
+          </div> */}
           </Col>
         </Row>
       </Container>
