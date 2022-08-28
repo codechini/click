@@ -28,7 +28,8 @@ const [newAddr,setnewAddr]=useState("");
 
 const [user,setUser]=useState([]);
 const userCollectionRef=collection(db,"client");
-// const [errors, setErrors] = useState({});
+// const [validated, setValidated] = useState(false);
+const [errors, setErrors] = useState({});
 
 // const [item,setItem]=useState([]);
 // const inventoryCollectionRef=collection(db,"inventory");
@@ -58,7 +59,8 @@ useEffect(()=>{
     const clientData=await getDocs(userCollectionRef);
     setUser(clientData.docs.map((doc)=>({
       ...doc.data(),id: doc.id
-    })));
+    })
+    ));
   }
   getUsers();
   // const getItems = async()=>{
@@ -90,6 +92,9 @@ useEffect(()=>{
 //VALIDATION
 
 // const getAuth=;
+
+
+
 const register= async()=>{
   try{
     const user= await createUserWithEmailAndPassword(auth,newEmail,newPswd);
@@ -101,6 +106,8 @@ const register= async()=>{
   
 }
 
+
+
 // Redirection
 const navigate = useNavigate();
 
@@ -109,7 +116,7 @@ const navigate = useNavigate();
   return (
     <>
       <div className="frm rounded justify-content-center align-items-center">
-      <Form className='mx-3 justify-items-center'>
+      <Form className='mx-3 justify-items-center needs-validation' >
       <span className='regTitle'>Register your Company</span>
       <Row>
       <Col sm={6} >
@@ -126,9 +133,11 @@ const navigate = useNavigate();
             onChange={
               (event)=>{
                   setnewUser(event.target.value)
-            }}/>
-            <p className='err'>*Cannnot be empty</p>
-            <p className='err'>*Cannnot contain Numbers</p>
+            }}
+            isInvalid={!!errors}/>
+            <Form.Control.Feedback>
+              Chinmay
+            </Form.Control.Feedback>
       </Form.Group>
       <Form.Group className="mb-2" controlId="formBasicEmail">
         <Form.Label >Email Address</Form.Label>
@@ -141,7 +150,7 @@ const navigate = useNavigate();
           autoComplete='off'
           placeholder="Enter Email"
           onChange={(event)=>{
-              console.log(event.target.value);
+              // console.log(event.target.value);
               setnewEmail(event.target.value);
           }}/>
           <p className='err'>*Cannnot be empty</p>

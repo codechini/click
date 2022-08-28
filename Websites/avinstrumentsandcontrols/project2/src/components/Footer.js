@@ -5,6 +5,7 @@ import {
   Row,
   Button
 } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 const Footer = (props) => {
@@ -14,12 +15,10 @@ const Footer = (props) => {
       <Card.Header>{props.l1}</Card.Header>
       <Card.Body bg='dark'>
         <Card.Title>For further Information</Card.Title>
-        <Card.Text>
-          123-4567890
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Card.Text>Phone no. : 123-4567890</Card.Text>
+        <Card.Text>Email. : <Link to="/Mail">avinstrumentsandcontrols@gmail.com</Link></Card.Text>
       </Card.Body>
-      <Card.Footer className="text-muted"></Card.Footer>
+      <Card.Footer className="text-muted">© Copyright 2022 AVInstrumentsandControls</Card.Footer>
     </Card>
 </>
   )
