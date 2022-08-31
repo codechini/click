@@ -28,7 +28,7 @@ const [newAddr,setnewAddr]=useState("");
 
 const [user,setUser]=useState([]);
 const userCollectionRef=collection(db,"client");
-// const [validated, setValidated] = useState(false);
+const [validated, setValidated] = useState("Welcome Back");
 const [errors, setErrors] = useState({});
 
 // const [item,setItem]=useState([]);
@@ -91,10 +91,23 @@ useEffect(()=>{
 
 //VALIDATION
 
+const submitForm = (e)=>{
+  e.preventDefault();
+  setErrors("");
+  if(newUser == ""){
+  setErrors("Name is mandatory field!");
+  }else if(Form.Control.email == ""){
+  setErrors("Email is mandatory field!");
+  }else{
+  setValidated("Successfully Logged In");
+  }
+  
+  }
+
+
+//USER Create
+
 // const getAuth=;
-
-
-
 const register= async()=>{
   try{
     const user= await createUserWithEmailAndPassword(auth,newEmail,newPswd);
@@ -123,12 +136,10 @@ const navigate = useNavigate();
       <Form.Group className="mb-2" controlId="formBasicText">
       {/* onSubmit={handleSubmit} */}
         <Form.Label>Company Name</Form.Label>
-        <Form.Control className='inpt' 
-            required
-            name='cname'
+        <Form.Control className='inpt'
+            controlId="cname"
             type={"text"}
             value={newUser}
-            autoComplete='off'
             placeholder="Company Name" 
             onChange={
               (event)=>{
@@ -143,18 +154,15 @@ const navigate = useNavigate();
         <Form.Label >Email Address</Form.Label>
         <Form.Control 
           className='inpt'
-          // required
-          name='email'
           value={newEmail}
           type={"email"}
-          autoComplete='off'
           placeholder="Enter Email"
           onChange={(event)=>{
               // console.log(event.target.value);
               setnewEmail(event.target.value);
           }}/>
-          <p className='err'>*Cannnot be empty</p>
-          <p className='err'>*Invalid Email</p>
+          <Form.Control.Feedback>cannot be empty</Form.Control.Feedback>
+          <Form.Control.Feedback>Enter a Valid email</Form.Control.Feedback>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
@@ -162,17 +170,16 @@ const navigate = useNavigate();
         <Form.Label >Password</Form.Label>
         <Form.Control 
           className='inpt'
-          required 
-          name='password'
+          controlId='paswd'
           value={newPswd}
           type="password"
           placeholder="Enter Password"
           onChange={(event)=>{
             setnewPswd(event.target.value)
           }}/>
-          <p className='err'>*Cannnot be empty</p>
-          <p className='err'>*Must contain atleast a number</p>
-          <p className='err'>*Must contain atleast a Capital letter</p>
+          <Form.Control.Feedback>cannot be empty</Form.Control.Feedback>
+          <Form.Control.Feedback>*Must contain atleast a number</Form.Control.Feedback>
+          <Form.Control.Feedback>*Must contain atleast a Capital letter</Form.Control.Feedback>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
@@ -183,16 +190,14 @@ const navigate = useNavigate();
         <Form.Label >Phone no.</Form.Label>
         <Form.Control 
           className='inpt'
-          required
-          name='phno'
           value={newPhno}
           type="number"
           placeholder="Enter Phone no."
           onChange={(event)=>{
             setnewPhno(event.target.value);
           }}/>
-          <p className='err'>*Cannnot be empty</p>
-          <p className='err'>*Number cannot exceed 10 digits</p>
+          <Form.Control.Feedback>cannot be empty</Form.Control.Feedback>
+          <Form.Control.Feedback>*Number cannot exceed 10 digits</Form.Control.Feedback>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
@@ -201,13 +206,12 @@ const navigate = useNavigate();
         <Form.Control className='inpt'
           required
           type="text"
-          name='gstin'
           value={newGSTIN}
           placeholder="Enter GSTIN no."
           onChange={(event)=>{
             setnewGSTIN(event.target.value)
           }} />
-          <p className='err'>*Cannnot be empty</p>
+          <Form.Control.Feedback>cannot be empty</Form.Control.Feedback>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
@@ -221,7 +225,7 @@ const navigate = useNavigate();
           onChange={(event)=>{
             setnewAddr(event.target.value)
           }}/>
-          <p className='err'>*Cannnot be empty</p>
+          <Form.Control.Feedback>cannot be empty</Form.Control.Feedback>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
