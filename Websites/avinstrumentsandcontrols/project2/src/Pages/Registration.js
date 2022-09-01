@@ -261,7 +261,7 @@ const navigate = useNavigate();
 
     {/* Viewing "Tables" from same db # */}
 
-    {/* <div>
+    <div>
         {user.map((user)=>{
           return(
             <div>
@@ -270,7 +270,7 @@ const navigate = useNavigate();
           )
         })}
         
-    </div> */}
+    </div>
     </>
   );
 }
