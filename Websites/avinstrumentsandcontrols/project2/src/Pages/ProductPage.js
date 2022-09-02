@@ -54,22 +54,26 @@ const ProductPage = () => {
       {/* <ShowProducts/> */}
     </Row>
   </div>
-  <div className="container">
-    <Row>
-      <Col>
-        <Products imgsrc={pic1} 
-          name=''
-          
+  <div className="">
+    
+  <div className="">
+    {item.map((item)=>{
+      return(
+        <div className="">
+          {/* -   Name : <b>{item.pname}</b> */}
+          <Products imgsrc={pic1} 
+          name={item.pname}
           />
-          <div>
-          {item.map((item)=>{
-            return(
-              <div>
-                -   Name : <b>{item.pname}</b>
-              </div>
+        
+        </div>
             )
           })}
-          </div>
+    </div>
+          {/* <Row>
+        <Col>
+        <Products imgsrc={pic1} 
+          name={item.pname}
+          />
         </Col>
         <Col>
           <Products imgsrc={pic3}/>
@@ -88,11 +92,13 @@ const ProductPage = () => {
         <Col>
           <Products/>
         </Col>
-      </Row>
-      </div>
+      </Row> */}
+    
     </div>
+    </div>
+    
 
-    <div>
+    <div className='d-flex'>
         {item.map((item)=>{
           return(
             <div>

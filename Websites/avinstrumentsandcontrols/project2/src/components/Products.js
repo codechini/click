@@ -11,7 +11,9 @@ import { Link } from 'react-router-dom';
 const Products = (props) => {
   return (
     <>
-    <div className="pcontainer d-flex justify-content-center align-items-center">
+    {/* <div className="pcontainer d-flex justify-content-center align-items-center">
+    
+    </div> */}
     <Card style={{ width: '25rem' }}>
       <Card.Img variant="top" src={props.imgsrc} height='500px' />
       <Card.Body>
@@ -25,7 +27,6 @@ const Products = (props) => {
         </Button>
       </Card.Body>
     </Card>
-    </div>
     </>
   )
 }
