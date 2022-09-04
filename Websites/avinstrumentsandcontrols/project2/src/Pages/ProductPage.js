@@ -7,7 +7,7 @@ import {
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Products from '../components/Products';
-import { collection, getDocs, addDoc } from 'firebase/firestore';
+import { collection, doc, getDocs, addDoc, limit, query, where, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase-config';
 
 import pic1 from '../imgs/p1.jpg';
@@ -33,6 +33,24 @@ const ProductPage = () => {
 },[]);
 
 
+const q = query(inventoryCollectionRef, where("cost", "==", 15000));
+// console.log(q);
+  onSnapshot(q,(snapshot)=>{
+  let item=[];
+  snapshot.docs.forEach((doc)=>{
+    item.push({...doc.data(), id:doc.id})
+  })
+  renderElement(item);
+})
+
+//  Render element in my div tag
+function renderElement(doc){
+  let p= document.createElement('p');
+  let pname= document.createElement('p');
+  let desc= document.createElement('p');
+}
+
+
   return (
     <>
     
@@ -56,19 +74,24 @@ const ProductPage = () => {
   </div>
   <div className="">
     
-  <div className="">
+  <div className="i1">
     {item.map((item)=>{
+      
       return(
         <div className="">
           {/* -   Name : <b>{item.pname}</b> */}
           <Products imgsrc={pic1} 
           name={item.pname}
+          cost={item.cost}
           />
-        
         </div>
             )
           })}
     </div>
+    <div className="">
+      {/* <p>{q}</p> */}
+    </div>
+    
           {/* <Row>
         <Col>
         <Products imgsrc={pic1} 
@@ -98,7 +121,7 @@ const ProductPage = () => {
     </div>
     
 
-    <div className='d-flex'>
+    <div className=''>
         {item.map((item)=>{
           return(
             <div>
@@ -116,4 +139,4 @@ const ProductPage = () => {
     )
 }
 
-export default ProductPage
+export default ProductPage;
