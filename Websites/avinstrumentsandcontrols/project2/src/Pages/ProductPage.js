@@ -33,22 +33,32 @@ const ProductPage = () => {
 },[]);
 
 
-const q = query(inventoryCollectionRef, where("cost", "==", 15000));
-// console.log(q);
-  onSnapshot(q,(snapshot)=>{
-  let item=[];
-  snapshot.docs.forEach((doc)=>{
-    item.push({...doc.data(), id:doc.id})
-  })
-  renderElement(item);
-})
+// const q = query(inventoryCollectionRef, where("cost", "==", 15000));
+// const x = document.querySelector('i2');
+// // console.log(q);
+//   onSnapshot(q,(snapshot)=>{
+//   let item=[];
+//   snapshot.docs.forEach((doc)=>{
+//     item.push({...doc.data(), id:doc.id})
+//   })
+//   renderElement(item);
+// })
 
-//  Render element in my div tag
-function renderElement(doc){
-  let p= document.createElement('p');
-  let pname= document.createElement('p');
-  let desc= document.createElement('p');
-}
+// //  Render element in my div tag
+// function renderElement(doc){
+//   let p= document.createElement('p');
+//   let pname= document.createElement('p');
+//   let desc= document.createElement('p');
+
+//   p.setAttribute('i1',doc.id);
+//   pname.textContent=doc.data().pname;
+//   desc.textContent=doc.data().docs;
+
+//   p.append(pname);
+//   p.append(desc);
+
+//   x.appendChild(p);
+// }
 
 
   return (
@@ -88,8 +98,8 @@ function renderElement(doc){
             )
           })}
     </div>
-    <div className="">
-      {/* <p>{q}</p> */}
+    <div className="i2">
+      {/* <p></p> */}
     </div>
     
           {/* <Row>

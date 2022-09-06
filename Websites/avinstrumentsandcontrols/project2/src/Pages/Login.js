@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-
+import { signInWithEmailAndPassword } from "firebase/auth";
+import {auth} from '../firebase-config';
+import { useNavigate } from 'react-router-dom';
 
 import {
   // NavDropdown,
@@ -10,20 +12,35 @@ import {
   Button,
   Form,
   Row,
-  Col
+  Col,
+  Alert
 }from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
+import { collection, getDocs, addDoc } from 'firebase/firestore';
 import Home from './Home';
 
 const Login = () => {
   const[isToggled,setTogggled]=useState(false);
   const [newEmail,setnewEmail]=useState("");
   const [newPswd,setnewPswd]=useState("");
+  const [errors,setErrors]=useState("");
 
-  const login= async()=>{
-
+  // const auth = getAuth();
+  const navigate = useNavigate();
+  const login= async(e)=>{
+    e.preventDefault();
+    try{
+      
+      const user=await signInWithEmailAndPassword(auth,newEmail,newPswd);
+      navigate("/ProductPage");
+    }catch(err){
+      setErrors(err.message);
+    }
   }
+
+  
+
   return (
     <>
     <div className="frm rounded justify-content-center align-items-center">
@@ -39,6 +56,9 @@ const Login = () => {
                 setnewEmail(event.target.value)
           }}
            />
+          <Form.Control.Feedback>
+              {errors && <Alert>{errors}</Alert> }
+          </Form.Control.Feedback>
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
@@ -57,7 +77,7 @@ const Login = () => {
         </Form.Text>
       </Form.Group>
       <Container>
-        <button onClick={()=>setTogggled(!isToggled)} href='../Home' className='btnReg align-items-center' variant="primary" type="submit">
+        <button onClick={()=>{}} className='btnReg align-items-center' variant="primary" type="submit">
           Login
           {/* {isToggled && <Home />} */}
         </button>

@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 // import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import {auth} from '../firebase-config';
 import {
   Alert,
@@ -108,15 +108,23 @@ const submitForm = (e)=>{
 //USER Create
 
 // const getAuth=;
-const register= async()=>{
-  try{
+const register= async(e)=>{
+  // try{
+  //   const user= await createUserWithEmailAndPassword(auth,newEmail,newPswd);
+  //   console.log(user);
+  // }
+  // catch(errors){
+  //   console.log(errors.message);
+  // }
+  e.preventDefault();
+  try {
     const user= await createUserWithEmailAndPassword(auth,newEmail,newPswd);
-    console.log(user);
+    submitForm();
+    createClient();
+    navigate("/ProductPage");
+  } catch (error) {
+    setErrors(error.message);
   }
-  catch(errors){
-    console.log(errors.message);
-  }
-  
 }
 
 
@@ -129,7 +137,7 @@ const navigate = useNavigate();
   return (
     <>
       <div className="frm rounded justify-content-center align-items-center">
-      <Form className='mx-3 justify-items-center needs-validation' >
+      <Form className='mx-3 justify-items-center needs-validation' onSubmit={register} >
       <span className='regTitle'>Register your Company</span>
       <Row>
       <Col sm={6} >
@@ -236,7 +244,7 @@ const navigate = useNavigate();
       <Container>
         <Row>
           <Col>
-          <Button onClick={()=>{register();createClient() }} className='btnReg' variant="primary" type="submit">
+          <Button onClick={()=>{ }} className='btnReg' variant="primary" type="submit">
           {/* onClick={handleSubmit}  ;navigate("/ProductPage") */}
             Register Business
           </Button>
