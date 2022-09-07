@@ -96,9 +96,11 @@ const submitForm = (e)=>{
   setErrors("");
   if(newUser == ""){
   setErrors("Name is mandatory field!");
-  }else if(Form.Control.email == ""){
+  }
+  else if(Form.Control.email == ""){
   setErrors("Email is mandatory field!");
-  }else{
+  }
+  else{
   setValidated("Successfully Logged In");
   }
   
@@ -119,7 +121,7 @@ const register= async(e)=>{
   e.preventDefault();
   try {
     const user= await createUserWithEmailAndPassword(auth,newEmail,newPswd);
-    submitForm();
+    submitForm(user);
     createClient();
     navigate("/ProductPage");
   } catch (error) {
@@ -137,7 +139,7 @@ const navigate = useNavigate();
   return (
     <>
       <div className="frm rounded justify-content-center align-items-center">
-      <Form className='mx-3 justify-items-center needs-validation' onSubmit={register} >
+      <Form className='mx-3 justify-items-center needs-validation' onSubmit={register} Validate={validated} >
       <span className='regTitle'>Register your Company</span>
       <Row>
       <Col sm={6} >
