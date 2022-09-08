@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { signInWithEmailAndPassword,signOut } from "firebase/auth";
+import { signInWithEmailAndPassword,signOut, updateCurrentUser } from "firebase/auth";
 import {auth} from '../firebase-config';
 import { useNavigate } from 'react-router-dom';
 
@@ -16,6 +16,7 @@ import {
   Alert
 }from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ProductPage from '../Pages/ProductPage';
 import { Link } from 'react-router-dom';
 // import { collection, getDocs, addDoc } from 'firebase/firestore';
 // import Home from './Home';
@@ -45,11 +46,14 @@ const Login = () => {
     }
   
   const navigate = useNavigate();
+
   const login= async(e)=>{
     e.preventDefault();
     try{
       
+      
       const user=await signInWithEmailAndPassword(auth,newEmail,newPswd);
+      console.log(user);
       submitForm(user);
       navigate("/ProductPage");
     }catch(err){
@@ -57,16 +61,21 @@ const Login = () => {
     }
   }
 
-  const logout= async(e)=>{
-    e.preventDefault();
-    try {
-      const user= await signOut(auth,newEmail,newPswd);
-      submitForm(user);
-      navigate("/ProductPage");
-    } catch (error) {
-      setErrors(error.message);
-    }
+  // const logout= async(e)=>{
+  //   e.preventDefault();
+  //   try {
+  //     const user= await signOut(auth,newEmail,newPswd);
+  //     submitForm(user);
+  //     navigate("/ProductPage");
+  //   } catch (error) {
+  //     setErrors(error.message);
+  //   }
+  // }
+  
+  const logout = async () => {
+    await signOut(auth);
   }
+
   
 
   return (
@@ -106,14 +115,11 @@ const Login = () => {
         </Form.Text>
       </Form.Group>
       <Container>
-        <button onClick={()=>{}} className='btnReg align-items-center' variant="primary" type="submit">
+        <button  className='btnReg align-items-center' variant="primary" type="submit">
           Login
           {/* {isToggled && <Home />} */}
         </button>
-        <button onClick={{logout}} className='btnReg align-items-center' variant="primary" type="submit">
-          Log out
-          {/* {isToggled && <Home />} */}
-        </button>
+        
       </Container>
       <Container>
         <Row>
@@ -121,10 +127,16 @@ const Login = () => {
           <div className="tosignup">
             Don't have an Account <Link to="/RegPage">Register</Link>
           </div>
+          
           </Col>
         </Row>
       </Container>
       </Form>
+      <p>{newEmail}</p>
+      <button onClick={{logout}} className='btnReg align-items-center' variant="primary" type="submit">
+          Log out
+          {/* {isToggled && <Home />} */}
+        </button>
     </div>
     </>
   )

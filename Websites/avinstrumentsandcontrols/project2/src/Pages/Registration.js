@@ -95,13 +95,13 @@ const submitForm = (e)=>{
   e.preventDefault();
   setErrors("");
   if(newUser == ""){
-  setErrors("Name is mandatory field!");
+    setErrors("Name is mandatory field!");
   }
   else if(Form.Control.email == ""){
-  setErrors("Email is mandatory field!");
+    setErrors("Email is mandatory field!");
   }
   else{
-  setValidated("Successfully Logged In");
+    setValidated("Successfully Logged In");
   }
   
   }
@@ -124,8 +124,8 @@ const register= async(e)=>{
     submitForm(user);
     createClient();
     navigate("/ProductPage");
-  } catch (error) {
-    setErrors(error.message);
+  } catch (err) {
+    setErrors(err.message);
   }
 }
 
@@ -146,7 +146,9 @@ const navigate = useNavigate();
       <Form.Group className="mb-2" controlId="formBasicText">
       {/* onSubmit={handleSubmit} */}
         <Form.Label>Company Name</Form.Label>
-        <Form.Control className='inpt'
+        <Form.Control 
+            required='true'
+            className='inpt'
             controlId="cname"
             type={"text"}
             value={newUser}
@@ -154,18 +156,19 @@ const navigate = useNavigate();
             onChange={
               (event)=>{
                   setnewUser(event.target.value)
-            }}
-            isInvalid={!!errors}/>
+            }}/>
             <Form.Control.Feedback>
-              Chinmay
+              {/* {errors && <Alert>{errors}</Alert> } */}
             </Form.Control.Feedback>
       </Form.Group>
       <Form.Group className="mb-2" controlId="formBasicEmail">
         <Form.Label >Email Address</Form.Label>
         <Form.Control 
+          required='true'
           className='inpt'
           value={newEmail}
           type={"email"}
+          pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
           placeholder="Enter Email"
           onChange={(event)=>{
               // console.log(event.target.value);
@@ -179,6 +182,7 @@ const navigate = useNavigate();
       <Form.Group className="mb-2" controlId="formBasicPassword">
         <Form.Label >Password</Form.Label>
         <Form.Control 
+          required='true'
           className='inpt'
           controlId='paswd'
           value={newPswd}
@@ -199,6 +203,7 @@ const navigate = useNavigate();
       <Form.Group className="mb-2">
         <Form.Label >Phone no.</Form.Label>
         <Form.Control 
+          required='true'
           className='inpt'
           value={newPhno}
           type="number"
@@ -228,6 +233,7 @@ const navigate = useNavigate();
       <Form.Group className="mb-2">
         <Form.Label >Company Address</Form.Label>
         <Form.Control className='inpt' 
+          required='true'
           type="text"
           name='addr'
           as="textarea"
@@ -246,7 +252,7 @@ const navigate = useNavigate();
       <Container>
         <Row>
           <Col>
-          <Button onClick={()=>{ }} className='btnReg' variant="primary" type="submit">
+          <Button  className='btnReg' variant="primary" type="submit">
           {/* onClick={handleSubmit}  ;navigate("/ProductPage") */}
             Register Business
           </Button>
