@@ -20,7 +20,8 @@ const Products = (props) => {
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        <Card.Text>{props.cost}</Card.Text>
+        <Card.Text> Cost :{props.cost}</Card.Text>
+        <Card.Text>In Stock :{props.quantity}</Card.Text>
         <Button variant="primary" size='lg'>
           <Link className='links' to='/ProductDetails'>Buy</Link> 
         </Button>

@@ -22,6 +22,9 @@ const Admin = () => {
   const [pcost, newCost]=useState("");
   const [document, newDoc]=useState("");
 
+  const [show, setShow] = useState(false);
+  
+
   const addProduct= async()=>{
     await addDoc(inventoryCollectionRef , 
       { 
@@ -49,12 +52,14 @@ const Admin = () => {
     <>
       
       <div className="container">
-      
+        <Alert show={show} variant='success'>
+          Added
+        </Alert>
         <Row>
           <Col>
           <div className="container">
             
-            <Form className='mx-3 justify-items-center needs-validation' >
+            <Form className='mx-3 justify-items-center needs-validation' onSubmit={() => {setShow(true);addProduct()}}>
             <p style={{paddingTop:"20px",paddingBottom:"20px",fontSize:'34px',fontWeight:"200"}}>Admin Page</p>
             Add Product :-
               <Form.Group className="mb-2 d-flex" controlId="formBasicText">
@@ -110,7 +115,7 @@ const Admin = () => {
                 
               </Form.Group>  
               <div className="container">
-              <Button onClick={addProduct}  className='btnReg mx-2' variant="primary" type="submit">
+              <Button  className='btnReg mx-2' variant="primary" type="submit">
                 Add
               </Button>
               <Button  className='btnReg mx-2' variant="primary" type="submit">

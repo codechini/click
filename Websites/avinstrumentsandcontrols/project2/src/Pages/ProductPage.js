@@ -93,6 +93,7 @@ const ProductPage = () => {
           <Products imgsrc={pic1} 
           name={item.pname}
           cost={item.cost}
+          quantity={item.quantity}
           />
         </div>
             )
