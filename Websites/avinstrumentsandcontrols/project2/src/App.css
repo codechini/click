@@ -92,6 +92,7 @@ html {
 .btnReg {
     padding: 0px 10px 2px 10px;
     margin-top: 7px;
+    margin-bottom: 7px;
     background: rgb(46, 81, 206);
     color: rgb(255, 255, 255);
     font-size: 28px;

@@ -11,8 +11,8 @@ import {
   Button,
   Form
 }from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
 import { collection, getDocs, addDoc } from 'firebase/firestore';
 import { db } from '../firebase-config';
 import ProductPage from '../Pages/ProductPage';
@@ -40,6 +40,7 @@ const [errors, setErrors] = useState({});
 // const [bill,setBill] = useState([]);
 // const billCollectionRef = collection(db,"billing");
 
+const navigate = useNavigate();
 
 const createClient= async()=>{
   await addDoc(userCollectionRef , 
@@ -94,10 +95,10 @@ useEffect(()=>{
 const submitForm = (e)=>{
   e.preventDefault();
   setErrors("");
-  if(newUser == ""){
+  if(newUser === ""){
     setErrors("Name is mandatory field!");
   }
-  else if(Form.Control.email == ""){
+  else if(Form.Control.email === ""){
     setErrors("Email is mandatory field!");
   }
   else{
@@ -119,20 +120,21 @@ const register= async(e)=>{
   //   console.log(errors.message);
   // }
   e.preventDefault();
+  
   try {
     const user= await createUserWithEmailAndPassword(auth,newEmail,newPswd);
-    submitForm(user);
-    createClient();
-    navigate("/ProductPage");
+    navigate("/ProductPage")
   } catch (err) {
     setErrors(err.message);
   }
+  submitForm();
+  createClient();
+  
 }
 
 
 
 // Redirection
-const navigate = useNavigate();
 
 
 
@@ -149,13 +151,12 @@ const navigate = useNavigate();
         <Form.Control 
             required='true'
             className='inpt'
-            controlId="cname"
-            type={"text"}
-            value={newUser}
+            // pattern='[A-Za-z]{1,32}'
             placeholder="Company Name" 
             onChange={
               (event)=>{
-                  setnewUser(event.target.value)
+                // console.log(event.target.value);
+                setnewUser(event.target.value)
             }}/>
             <Form.Control.Feedback>
               {/* {errors && <Alert>{errors}</Alert> } */}
@@ -166,8 +167,6 @@ const navigate = useNavigate();
         <Form.Control 
           required='true'
           className='inpt'
-          value={newEmail}
-          type={"email"}
           pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
           placeholder="Enter Email"
           onChange={(event)=>{
@@ -184,9 +183,8 @@ const navigate = useNavigate();
         <Form.Control 
           required='true'
           className='inpt'
-          controlId='paswd'
-          value={newPswd}
           type="password"
+          // pattern=''
           placeholder="Enter Password"
           onChange={(event)=>{
             setnewPswd(event.target.value)
@@ -205,8 +203,8 @@ const navigate = useNavigate();
         <Form.Control 
           required='true'
           className='inpt'
-          value={newPhno}
-          type="number"
+          type="tel"
+          pattern='[7-9]{1}[0-9]{9}'
           placeholder="Enter Phone no."
           onChange={(event)=>{
             setnewPhno(event.target.value);
@@ -221,7 +219,7 @@ const navigate = useNavigate();
         <Form.Control className='inpt'
           required
           type="text"
-          value={newGSTIN}
+          // pattern='^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$'
           placeholder="Enter GSTIN no."
           onChange={(event)=>{
             setnewGSTIN(event.target.value)

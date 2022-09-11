@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { signInWithEmailAndPassword,signOut, updateCurrentUser } from "firebase/auth";
+import React, { useState, useEffect } from 'react';
+import { firebase, signInWithEmailAndPassword,signOut, updateCurrentUser,onAuthStateChanged } from "firebase/auth";
 import {auth} from '../firebase-config';
+import { collection, getDocs, addDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 
 import {
@@ -18,6 +19,8 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductPage from '../Pages/ProductPage';
 import { Link } from 'react-router-dom';
+import { db } from '../firebase-config';
+import { FirebaseError } from 'firebase/app';
 // import { collection, getDocs, addDoc } from 'firebase/firestore';
 // import Home from './Home';
 
@@ -27,54 +30,71 @@ const Login = () => {
   const [newEmail,setnewEmail]=useState("");
   const [newPswd,setnewPswd]=useState("");
   const [errors,setErrors]=useState("");
+  const [user,setUser]=useState({});
 
   // const auth = getAuth();
 
-  const submitForm = (e)=>{
-    e.preventDefault();
-    setErrors("");
-    if(newEmail == ""){
-    setErrors("Name is mandatory field!");
-    }
-    else if(Form.Control.email == ""){
-    setErrors("Email is mandatory field!");
-    }
-    else{
-    setValidated("Successfully Logged In");
-    }
+
+  // const submitForm = (e)=>{
+  //   e.preventDefault();
+  //   setErrors("");
+  //   if(newEmail === "admin@admin.com"){
+  //     setErrors("Name is mandatory field!");
+  //     if(newPswd === "adminpass"){
+  //       setErrors("Name is mandatory field!");
+        
+  //       navigate("/Admin")
+  //     }
+  //   }
     
-    }
+  //   else{
+  //   setValidated("Successfully Logged In");
+  //   }
+  //   }
   
   const navigate = useNavigate();
 
+  onAuthStateChanged(auth,(currentUser)=>{
+    setUser(currentUser);
+  });
+  
   const login= async(e)=>{
     e.preventDefault();
+    console.log();
     try{
-      
-      
-      const user=await signInWithEmailAndPassword(auth,newEmail,newPswd);
+      const user=await signInWithEmailAndPassword(newEmail, newPswd)
+      .catch(function(error) {
+        console.log(error.code);
+        console.log(error.message);
+      });
       console.log(user);
-      submitForm(user);
-      navigate("/ProductPage");
+
     }catch(err){
       setErrors(err.message);
     }
+    navigate("/ProductPage")
   }
 
-  // const logout= async(e)=>{
-  //   e.preventDefault();
-  //   try {
-  //     const user= await signOut(auth,newEmail,newPswd);
-  //     submitForm(user);
-  //     navigate("/ProductPage");
-  //   } catch (error) {
-  //     setErrors(error.message);
-  //   }
-  // }
   
-  const logout = async () => {
-    await signOut(auth);
+
+  const logout= async(e)=>{
+    e.preventDefault();
+    try {
+      const user= await signOut(auth,newEmail,newPswd)
+        .catch(function(error) {
+        console.log(error.code);
+        console.log(error.message);
+      });
+      navigate("/Home");
+    } catch (error) {
+      setErrors(error.message);
+    }
   }
+  
+  // const logout = async () => {
+  //   await signOut();
+  //   navigate("/Home")
+  // }
 
   
 
@@ -88,7 +108,7 @@ const Login = () => {
         <Form.Control 
           required
           placeholder="Enter Name"
-          pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
+          pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
           onChange={
             (event)=>{
                 setnewEmail(event.target.value)
@@ -115,10 +135,17 @@ const Login = () => {
         </Form.Text>
       </Form.Group>
       <Container>
-        <button  className='btnReg align-items-center' variant="primary" type="submit">
+        
+          <button  className='btnReg align-items-center' variant="primary" type="submit">
           Login
           {/* {isToggled && <Home />} */}
+        </button> 
+        <button onClick={()=>{logout()}} className='btnReg align-items-center' variant="primary" type="submit">
+          Log out
+          {/* {isToggled && <Home />} */}
         </button>
+      
+        
         
       </Container>
       <Container>
@@ -132,11 +159,7 @@ const Login = () => {
         </Row>
       </Container>
       </Form>
-      <p>{newEmail}</p>
-      <button onClick={{logout}} className='btnReg align-items-center' variant="primary" type="submit">
-          Log out
-          {/* {isToggled && <Home />} */}
-        </button>
+      <p>{auth.currentUser.email}</p>
     </div>
     </>
   )

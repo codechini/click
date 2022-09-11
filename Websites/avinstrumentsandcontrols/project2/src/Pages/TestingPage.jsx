@@ -34,6 +34,16 @@ const TestingPage = () => {
             <Form.Label>Product Description</Form.Label>
             <Form.Control type="textarea" placeholder="Description" />
           </Form.Group>
+          <Container>
+            <Row>
+              <Col>
+              <Button  className='btnReg' variant="primary" type="submit">
+                {/* onClick={handleSubmit}  ;navigate("/ProductPage") */}
+                Register Business
+              </Button>
+          </Col>
+        </Row>
+      </Container>
         </Form>
         </div>
     </>
