@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 // import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithPopup, updateCurrentUser } from "firebase/auth";
 import {auth} from '../firebase-config';
 import {
   Alert,
@@ -50,7 +50,8 @@ const createClient= async()=>{
       email: newEmail,
       passwd: newPswd,
       GSTIN: newGSTIN,
-      address: newAddr
+      address: newAddr,
+      privilage:false
    });
 }
 
@@ -92,22 +93,6 @@ useEffect(()=>{
 
 //VALIDATION
 
-const submitForm = (e)=>{
-  e.preventDefault();
-  setErrors("");
-  if(newUser === ""){
-    setErrors("Name is mandatory field!");
-  }
-  else if(Form.Control.email === ""){
-    setErrors("Email is mandatory field!");
-  }
-  else{
-    setValidated("Successfully Logged In");
-  }
-  
-  }
-
-
 //USER Create
 
 // const getAuth=;
@@ -122,12 +107,12 @@ const register= async(e)=>{
   e.preventDefault();
   
   try {
-    const user= await createUserWithEmailAndPassword(auth,newEmail,newPswd);
+    createUserWithEmailAndPassword(auth,newEmail,newPswd);
     navigate("/ProductPage")
   } catch (err) {
     setErrors(err.message);
   }
-  submitForm();
+  // submitForm();
   createClient();
   
 }

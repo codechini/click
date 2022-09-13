@@ -35,9 +35,11 @@ const Admin = () => {
      });
   }
 
-  useEffect(()=>{
+  const updateItem=async(name)=>{
+
+  }
   
-    
+  useEffect(()=>{
   const getItems = async()=>{
     const itemData=await getDocs(inventoryCollectionRef);
     // console.log(clientData);
@@ -55,12 +57,12 @@ const Admin = () => {
         <Alert show={show} variant='success'>
           Added
         </Alert>
+        <p style={{paddingTop:"20px",paddingBottom:"20px",fontSize:'34px',fontWeight:"200"}}>Admin Page</p>
         <Row>
           <Col>
           <div className="container">
-            
+          
             <Form className='mx-3 justify-items-center needs-validation' onSubmit={() => {setShow(true);addProduct()}}>
-            <p style={{paddingTop:"20px",paddingBottom:"20px",fontSize:'34px',fontWeight:"200"}}>Admin Page</p>
             Add Product :-
               <Form.Group className="mb-2 d-flex" controlId="formBasicText">
                 <Form.Label>Product Name :&nbsp;</Form.Label>
@@ -128,6 +130,8 @@ const Admin = () => {
             </Form>
           </div>
           </Col>
+
+          
           
         </Row>
       </div>

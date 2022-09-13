@@ -24,63 +24,57 @@ import { FirebaseError } from 'firebase/app';
 // import { collection, getDocs, addDoc } from 'firebase/firestore';
 // import Home from './Home';
 
+
 const Login = () => {
+
   const[isToggled,setTogggled]=useState(false);
   const [validated, setValidated] = useState("Welcome Back");
   const [newEmail,setnewEmail]=useState("");
   const [newPswd,setnewPswd]=useState("");
   const [errors,setErrors]=useState("");
   const [user,setUser]=useState({});
+  const userCollectionRef=collection(db,"client");
 
   // const auth = getAuth();
 
 
-  // const submitForm = (e)=>{
-  //   e.preventDefault();
-  //   setErrors("");
-  //   if(newEmail === "admin@admin.com"){
-  //     setErrors("Name is mandatory field!");
-  //     if(newPswd === "adminpass"){
-  //       setErrors("Name is mandatory field!");
-        
-  //       navigate("/Admin")
-  //     }
-  //   }
-    
-  //   else{
-  //   setValidated("Successfully Logged In");
-  //   }
-  //   }
+  useEffect(()=>{
+  
+    const getUsers = async()=>{
+    const clientData=await getDocs(userCollectionRef);
+    setUser(clientData.docs.map((doc)=>({
+      ...doc.data(),id: doc.id
+    })
+    ));
+  }
+  getUsers();
+},[]);
   
   const navigate = useNavigate();
-
-  onAuthStateChanged(auth,(currentUser)=>{
-    setUser(currentUser);
-  });
   
   const login= async(e)=>{
     e.preventDefault();
     console.log();
     try{
-      const user=await signInWithEmailAndPassword(newEmail, newPswd)
-      .catch(function(error) {
-        console.log(error.code);
-        console.log(error.message);
-      });
+      const user=await signInWithEmailAndPassword(newEmail, newPswd);
+      // eslint-disable-next-line no-lone-blocks
+      {user.privilage="true" ?(
+        navigate("/Admin")
+      ):(
+        navigate("/Login")
+      )}
       console.log(user);
-
     }catch(err){
       setErrors(err.message);
     }
-    navigate("/ProductPage")
+    
   }
-
   
 
   const logout= async(e)=>{
     e.preventDefault();
     try {
-      const user= await signOut(auth,newEmail,newPswd)
+      signOut(auth)
         .catch(function(error) {
         console.log(error.code);
         console.log(error.message);
@@ -90,11 +84,6 @@ const Login = () => {
       setErrors(error.message);
     }
   }
-  
-  // const logout = async () => {
-  //   await signOut();
-  //   navigate("/Home")
-  // }
 
   
 
@@ -135,18 +124,17 @@ const Login = () => {
         </Form.Text>
       </Form.Group>
       <Container>
-        
+      {user.privilage=true?(
           <button  className='btnReg align-items-center' variant="primary" type="submit">
           Login
           {/* {isToggled && <Home />} */}
-        </button> 
-        <button onClick={()=>{logout()}} className='btnReg align-items-center' variant="primary" type="submit">
+        </button>
+        ):(
+          <button onClick={()=>{logout()}} className='btnReg align-items-center' variant="primary" type="submit">
           Log out
           {/* {isToggled && <Home />} */}
         </button>
-      
-        
-        
+        )}
       </Container>
       <Container>
         <Row>
@@ -159,7 +147,6 @@ const Login = () => {
         </Row>
       </Container>
       </Form>
-      <p>{auth.currentUser.email}</p>
     </div>
     </>
   )
