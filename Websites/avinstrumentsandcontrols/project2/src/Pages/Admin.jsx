@@ -10,7 +10,7 @@ import {
 }from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { db } from '../firebase-config';
-import { collection, getDocs, addDoc } from 'firebase/firestore';
+import { collection,doc, getDocs, addDoc, where, deleteDoc} from 'firebase/firestore';
 
 const Admin = () => {
 
@@ -24,6 +24,16 @@ const Admin = () => {
 
   const [show, setShow] = useState(false);
   
+  useEffect(()=>{
+    const getItems = async()=>{
+      const itemData=await getDocs(inventoryCollectionRef);
+      // console.log(clientData);
+      setnewItem(itemData.docs.map((doc)=>({
+        ...doc.data(),id: doc.id
+      })));
+    }
+    getItems();
+  },[]);
 
   const addProduct= async()=>{
     await addDoc(inventoryCollectionRef , 
@@ -35,21 +45,11 @@ const Admin = () => {
      });
   }
 
-  const updateItem=async(name)=>{
+  const deleteItem=async(name)=>{
+    await deleteDoc(doc(db, "inventory", "pname"));
+  }
 
-  }
-  
-  useEffect(()=>{
-  const getItems = async()=>{
-    const itemData=await getDocs(inventoryCollectionRef);
-    // console.log(clientData);
-    setnewItem(itemData.docs.map((doc)=>({
-      ...doc.data(),id: doc.id
-    })));
-  }
-  getItems();
-},[]);
-  
+
   return (
     <>
       
@@ -62,13 +62,14 @@ const Admin = () => {
           <Col>
           <div className="container">
           
-            <Form className='mx-3 justify-items-center needs-validation' onSubmit={() => {setShow(true);addProduct()}}>
+            <Form className='mx-3 justify-items-center needs-validation' onSubmit={() => {setShow(true)}}>
             Add Product :-
               <Form.Group className="mb-2 d-flex" controlId="formBasicText">
                 <Form.Label>Product Name :&nbsp;</Form.Label>
                 <Form.Control
                 required
                 className='inpt'
+                autoComplete='off'
                 pattern='[A-Za-z]{1,32}'
                 onChange={(event)=>{
                   console.log(event.target.value);
@@ -82,6 +83,7 @@ const Admin = () => {
                 <Form.Control
                 required
                 className='inpt'
+                autoComplete='off'
                 // pattern='[A-Za-z]{1,32}'
                 onChange={(event)=>{
                   // console.log(event.target.value);
@@ -96,6 +98,7 @@ const Admin = () => {
                 required
                 className='inpt'
                 // pattern='[A-Za-z]{1,32}'
+                autoComplete='off'
                 onChange={(event)=>{
                   // console.log(event.target.value);
                   newQ(event.target.value)
@@ -108,6 +111,7 @@ const Admin = () => {
                 <Form.Control
                 required
                 className='inpt'
+                autoComplete='off'
                 // pattern='[A-Za-z]{1,32}'
                 onChange={(event)=>{
                   // console.log(event.target.value);
@@ -117,13 +121,13 @@ const Admin = () => {
                 
               </Form.Group>  
               <div className="container">
-              <Button  className='btnReg mx-2' variant="primary" type="submit">
+              <Button onClick={addProduct} className='btnReg mx-2' variant="primary" type="submit">
                 Add
               </Button>
               <Button  className='btnReg mx-2' variant="primary" type="submit">
                 Update
               </Button>
-              <Button  className='btnReg ' variant="primary" type="submit">
+              <Button onClick={deleteItem}  className='btnReg ' variant="primary" type="submit">
                 Delete
               </Button>
               </div>
@@ -134,6 +138,16 @@ const Admin = () => {
           
           
         </Row>
+        <div>
+        {item.map((item)=>{
+          return(
+            <div>
+              -  Product Name : <b>{item.pname}</b>
+            </div>
+          )
+        })}
+        
+    </div>
       </div>
     </>
   )

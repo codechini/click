@@ -56,7 +56,6 @@ const createClient= async()=>{
 }
 
 useEffect(()=>{
-  
     const getUsers = async()=>{
     const clientData=await getDocs(userCollectionRef);
     setUser(clientData.docs.map((doc)=>({
@@ -91,19 +90,9 @@ useEffect(()=>{
   // getTest();
 },[]);
 
-//VALIDATION
-
-//USER Create
 
 // const getAuth=;
 const register= async(e)=>{
-  // try{
-  //   const user= await createUserWithEmailAndPassword(auth,newEmail,newPswd);
-  //   console.log(user);
-  // }
-  // catch(errors){
-  //   console.log(errors.message);
-  // }
   e.preventDefault();
   
   try {
@@ -136,6 +125,7 @@ const register= async(e)=>{
         <Form.Control 
             required='true'
             className='inpt'
+            autoComplete='off'
             // pattern='[A-Za-z]{1,32}'
             placeholder="Company Name" 
             onChange={
@@ -152,6 +142,7 @@ const register= async(e)=>{
         <Form.Control 
           required='true'
           className='inpt'
+          autoComplete='off'
           pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
           placeholder="Enter Email"
           onChange={(event)=>{
@@ -168,6 +159,7 @@ const register= async(e)=>{
         <Form.Control 
           required='true'
           className='inpt'
+          autoComplete='off'
           type="password"
           // pattern=''
           placeholder="Enter Password"
@@ -188,6 +180,7 @@ const register= async(e)=>{
         <Form.Control 
           required='true'
           className='inpt'
+          autoComplete='off'
           type="tel"
           pattern='[7-9]{1}[0-9]{9}'
           placeholder="Enter Phone no."
@@ -204,6 +197,7 @@ const register= async(e)=>{
         <Form.Control className='inpt'
           required
           type="text"
+          autoComplete='off'
           // pattern='^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$'
           placeholder="Enter GSTIN no."
           onChange={(event)=>{
@@ -218,6 +212,7 @@ const register= async(e)=>{
         <Form.Control className='inpt' 
           required='true'
           type="text"
+          autoComplete='off'
           name='addr'
           as="textarea"
           placeholder="Enter Address"

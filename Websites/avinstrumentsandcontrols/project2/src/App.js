@@ -30,6 +30,8 @@ import Login from './Pages/Login';
 import ProductDetails from './Pages/ProductDetails';
 import Mail from './Pages/Mail';
 import Admin from './Pages/Admin';
+import ULogin from './Pages/ULogin';
+import ALogin from './Pages/ALogin';
 
 function App() {
   return (
@@ -51,6 +53,8 @@ function App() {
         <Route path='/TestingPage' element={<TestingPage />}/>
         <Route path='/Mail' element={<Mail />}/>
         <Route path='/Admin' element={<Admin />}/>
+        <Route path='ULogin' element={<ULogin/>}/>
+        <Route path='ALogin' element={<ALogin/>}/>
         </Routes>
       
       <Footer l1='Contact Us' />
