@@ -3,7 +3,7 @@ import React from 'react';
 const Payment = () => {
   return (
     <>
-      Payment Page
+      Payment Page yet to be
     </>
   )
 }

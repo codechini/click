@@ -2,12 +2,9 @@ import {React,useState} from 'react';
 import { Link } from 'react-router-dom';
 import Products from '../components/Products';
 import Pdf1 from '../docs/Hydraulic Hand Pump.pdf';
-import Payment from '../Pages/Payment';
 import {
   Row,
-  Button,
-  Col,
-  Card
+  Col
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import pic1 from '../imgs/p1.jpg';

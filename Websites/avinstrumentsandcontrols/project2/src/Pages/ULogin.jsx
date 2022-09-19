@@ -57,8 +57,6 @@ const ULogin = () => {
     let em =query(empasschk, where("email", "==", user.newEmail));
     let ps =query(empasschk, where("passwd", "==", user.newPswd));
 
-    
-
     onSnapshot(admin,(snapshot)=>{
       let cLient=[];
       snapshot.docs.forEach((doc)=>{

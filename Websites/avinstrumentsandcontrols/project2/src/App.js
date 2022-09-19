@@ -1,12 +1,9 @@
 import './App.css';
 import Nav from '../src/components/Navigationbar';
-// import Main from './Pages/Home';
 import LearnMore from './Pages/LearnMore';
-// import Products from './components/Products';
 import Footer from '../src/components/Footer';
 import Home from './Pages/Home';
 import Reg from './Pages/Registration';
-// import login from './Pages/Login';
 import ProductPage from './Pages/ProductPage';
 import TestingPage from './Pages/TestingPage';
 import Payment from './Pages/Payment';
@@ -23,8 +20,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  //Navigate
+  Route
 } from 'react-router-dom';
 import Login from './Pages/Login';
 import ProductDetails from './Pages/ProductDetails';

@@ -29,7 +29,6 @@ const ALogin = () => {
     
   const login= async(e)=>{
     e.preventDefault();
-
     if (newEmail==="admin@gmail.com") {
       if (newPswd==="Admin2345") {
         navigate("/Admin");
@@ -108,7 +107,6 @@ const ALogin = () => {
           <div className="tosignup">
             Don't have an Account <Link to="/RegPage">Register</Link>
           </div>
-          
           </Col>
         </Row>
       </Container>
@@ -117,5 +115,4 @@ const ALogin = () => {
     </>
   )
 }
-
 export default ALogin;

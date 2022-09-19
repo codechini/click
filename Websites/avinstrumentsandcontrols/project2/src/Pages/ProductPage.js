@@ -2,12 +2,11 @@ import { React, useState, useEffect } from 'react';
 import {
   Row,
   Button,
-  Col,
-  Card
+  Col
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Products from '../components/Products';
-import { collection, doc, getDocs, addDoc, limit, query, where, onSnapshot } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase-config';
 
 import pic1 from '../imgs/p1.jpg';

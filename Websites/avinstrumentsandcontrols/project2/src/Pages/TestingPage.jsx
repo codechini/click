@@ -3,7 +3,6 @@ import {
   // NavDropdown,
   Row,
   Col,
-  Navbar,
   Container,
   Button,
   Form
@@ -38,7 +37,6 @@ const TestingPage = () => {
             <Row>
               <Col>
               <Button  className='btnReg' variant="primary" type="submit">
-                {/* onClick={handleSubmit}  ;navigate("/ProductPage") */}
                 Register Business
               </Button>
           </Col>

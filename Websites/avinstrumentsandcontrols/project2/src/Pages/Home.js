@@ -1,9 +1,6 @@
 import React from 'react';
 import {
   Card,
-  Col,
-  Row,
-  Button
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import pic from '../imgs/p2.jpg';

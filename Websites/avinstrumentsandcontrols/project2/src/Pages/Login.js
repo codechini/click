@@ -17,7 +17,7 @@ import {
   Alert
 }from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ProductPage from '../Pages/ProductPage';
+// import ProductPage from '../Pages/ProductPage';
 import { Link } from 'react-router-dom';
 import { db } from '../firebase-config';
 import { FirebaseError } from 'firebase/app';

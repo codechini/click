@@ -224,14 +224,12 @@ const register= async(e)=>{
         </Form.Text>
       </Form.Group>
       </Col>
-      
       </Row>
 
       <Container>
         <Row>
           <Col>
           <Button  className='btnReg' variant="primary" type="submit">
-          {/* onClick={handleSubmit}  ;navigate("/ProductPage") */}
             Register Business
           </Button>
           </Col>
