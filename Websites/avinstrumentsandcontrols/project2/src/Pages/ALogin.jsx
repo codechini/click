@@ -1,43 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+// , useEffect
 import { firebase, signInWithEmailAndPassword,signOut, updateCurrentUser,onAuthStateChanged } from "firebase/auth";
 import {auth} from '../firebase-config';
-import { collection, doc,query,where,getDoc, getDocs, addDoc, onSnapshot,snapshot } from 'firebase/firestore';
+// import { collection, doc,query,where,getDoc, getDocs, addDoc, onSnapshot,snapshot } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 
 import {
-  // NavDropdown,
-  // Navbar,
-  // Nav,
-  // Form,
   Container,
-  // Button,
   Form,
   Row,
   Col,
   Alert
 }from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ProductPage from '../Pages/ProductPage';
+// import ProductPage from '../Pages/ProductPage';
 import { Link } from 'react-router-dom';
-import { db } from '../firebase-config';
-import { FirebaseError } from 'firebase/app';
+// import { db } from '../firebase-config';
+// import { FirebaseError } from 'firebase/app';
 
 const ALogin = () => {
 
   const [errors,setErrors]=useState("");
-  const [user,setUser]=useState({
-    newEmail:"",
-    newPswd:"",
-  });
+  const [newEmail,setnewEmail]=useState("");
+  const [newPswd,setnewPswd]=useState("");
+  const [user,setUser]=useState({})
 
   const navigate = useNavigate();
     
   const login= async(e)=>{
     e.preventDefault();
-    const empasschk = collection(db, "client");
-    let admin =query(empasschk, where("privilage", "==", true));
-    let em =query(empasschk, where("email", "==", user.newEmail));
-    let ps =query(empasschk, where("passwd", "==", user.newPswd));
+
+    if (newEmail==="admin@gmail.com") {
+      if (newPswd==="Admin2345") {
+        navigate("/Admin");
+      }
+    }
   }
 
   const logout= async(e)=>{
@@ -69,7 +66,7 @@ const ALogin = () => {
           pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
           onChange={
             (e)=>{
-              user(e.target.value)
+              setnewEmail(e.target.value)
           }}
            />
           <Form.Control.Feedback>
@@ -87,7 +84,7 @@ const ALogin = () => {
           placeholder="Enter Password"
           onChange={
             (e)=>{
-              const newPswd=e.target.value;
+              setnewPswd(e.target.value);
           }}
            />
         <Form.Text className="text-muted">

@@ -1,16 +1,14 @@
 import {React,useState,useEffect} from 'react';
-import auth from '../firebase-config';
 import {
   Alert,
   Row,
   Col,
-  Container,
   Button,
-  Form
+  Form,
 }from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { db } from '../firebase-config';
-import { collection,doc, getDocs, addDoc, where, deleteDoc} from 'firebase/firestore';
+import { collection,doc, getDocs, addDoc, deleteDoc,updateDoc , firebase} from 'firebase/firestore';
 
 const Admin = () => {
 
@@ -18,8 +16,8 @@ const Admin = () => {
   const inventoryCollectionRef=collection(db,"inventory");
 
   const [name, newName]=useState("");
-  const [q, newQ]=useState("");
-  const [pcost, newCost]=useState("");
+  const [q, newQ]=useState(0);
+  const [pcost, newCost]=useState(0);
   const [document, newDoc]=useState("");
 
   const [show, setShow] = useState(false);
@@ -42,17 +40,24 @@ const Admin = () => {
         quantity: Number(q),
         cost: Number(pcost),
         docs: document
-     });
+     },{ merge: true });
   }
 
-  const deleteItem=async(name)=>{
-    await deleteDoc(doc(db, "inventory", "pname"));
+  const deleteItem= async(id)=>{
+    const itemDoc = doc(db, "inventory", id);
+    await deleteDoc(itemDoc);
+  }
+
+  const updateItem= async(id,q)=>{
+    const itemDoc = doc(db, "inventory", id);
+    const newFields = { quantity:q  + 1 };
+    console.log(newFields)
+    await updateDoc(itemDoc, newFields);
   }
 
 
   return (
     <>
-      
       <div className="container">
         <Alert show={show} variant='success'>
           Added
@@ -62,7 +67,7 @@ const Admin = () => {
           <Col>
           <div className="container">
           
-            <Form className='mx-3 justify-items-center needs-validation' onSubmit={() => {setShow(true)}}>
+            <Form className=' justify-items-center needs-validation' onSubmit={() => {setShow(true)}}>
             Add Product :-
               <Form.Group className="mb-2 d-flex" controlId="formBasicText">
                 <Form.Label>Product Name :&nbsp;</Form.Label>
@@ -84,7 +89,7 @@ const Admin = () => {
                 required
                 className='inpt'
                 autoComplete='off'
-                // pattern='[A-Za-z]{1,32}'
+                pattern='[A-Za-z]{1,32}'
                 onChange={(event)=>{
                   // console.log(event.target.value);
                   newCost(event.target.value)
@@ -97,7 +102,7 @@ const Admin = () => {
                 <Form.Control
                 required
                 className='inpt'
-                // pattern='[A-Za-z]{1,32}'
+                pattern='[A-Za-z]{1,32}'
                 autoComplete='off'
                 onChange={(event)=>{
                   // console.log(event.target.value);
@@ -112,31 +117,42 @@ const Admin = () => {
                 required
                 className='inpt'
                 autoComplete='off'
-                // pattern='[A-Za-z]{1,32}'
+                pattern='[A-Za-z]{1,32}'
                 onChange={(event)=>{
                   // console.log(event.target.value);
                   newDoc(event.target.value)
                 }}
                 />
-                
               </Form.Group>  
               <div className="container">
               <Button onClick={addProduct} className='btnReg mx-2' variant="primary" type="submit">
                 Add
               </Button>
-              <Button  className='btnReg mx-2' variant="primary" type="submit">
-                Update
-              </Button>
-              <Button onClick={deleteItem}  className='btnReg ' variant="primary" type="submit">
-                Delete
-              </Button>
               </div>
             </Form>
           </div>
           </Col>
-
-          
-          
+        </Row>
+        <span>-------------------------------------------------------</span>
+        <Row>
+        <div className="container">
+            {item.map((item)=>{
+              return(
+                <>
+                  {" "}
+                  <h3>Name: {item.pname}</h3>
+                  <h3>Quantity: {item.quantity}</h3>
+                  <Button onClick={()=>{deleteItem(item.id)}}  className='btnReg ' variant="primary" type="submit">
+                    Delete
+                  </Button>
+                  {" "}
+                  <Button  onClick={()=>{updateItem(item.id,item.quantity)}} className='btnReg mx-2' variant="primary" type="submit">
+                    Update
+                  </Button>
+                </>
+              )
+            })}
+          </div>
         </Row>
         <div>
         {item.map((item)=>{
