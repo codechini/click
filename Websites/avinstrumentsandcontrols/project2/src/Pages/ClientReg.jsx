@@ -3,7 +3,7 @@ import React from 'react'
 const ClientReg = () => {
   return (
     <>
-      hi
+      hi hello
     </>
   )
 }
