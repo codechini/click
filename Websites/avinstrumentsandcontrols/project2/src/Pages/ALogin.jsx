@@ -94,7 +94,6 @@ const ALogin = () => {
       {user.privilage=true?(
           <button  className='btnReg align-items-center' variant="primary" type="submit">
           Login
-          {/* {isToggled && <Home />} */}
         </button>
         ):(
           <button onClick={()=>{logout()}} className='btnReg align-items-center' variant="primary" type="submit">
