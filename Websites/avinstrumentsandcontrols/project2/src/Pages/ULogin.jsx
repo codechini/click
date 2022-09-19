@@ -94,9 +94,6 @@ const ULogin = () => {
     
   }
 
-
-  
-
   const logout= async(e)=>{
     e.preventDefault();
     try {
