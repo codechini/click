@@ -29,35 +29,42 @@ import Admin from './Pages/Admin';
 import ULogin from './Pages/ULogin';
 import ALogin from './Pages/ALogin';
 import Cart from './Pages/Cart';
+import { AuthContextProvider } from './firebase-config';
+import Accounts from './Pages/Accounts';
+import Protected from './Pages/Protected';
 
 function App() {
   return (
     <>
-    
-    
-    <Router>
-      <Nav icon='AVInstrumentsandControls' l1='Home' l2='Products' l3='Learn More' quantity='(2)'/> 
-      {/* <Home title='AVIC'/> */}
-      {/* <Products/> */}
-      <Routes>
-        <Route path='/Home' element={<Home />} />
-        <Route path='/ProductPage' element={<ProductPage />}/>
-        <Route path='/LearnMore' element={<LearnMore />}/>
-        <Route path ='/RegPage' element={<Reg />}/>
-        <Route path ='/LoginPage' element={<Login />}/>
-        <Route path ='/ProductDetails' element={<ProductDetails />}/>
-        <Route path ='Payment' element={<Payment />}/>
-        <Route path='/TestingPage' element={<TestingPage />}/>
-        <Route path='/Mail' element={<Mail />}/>
-        <Route path='/Admin' element={<Admin />}/>
-        <Route path='ULogin' element={<ULogin/>}/>
-        <Route path='/ALogin' element={<ALogin/>}/>
-        <Route path='/Cart' element={<Cart/>}/>
-        </Routes>
-      
-      <Footer l1='Contact Us' />
+      <AuthContextProvider>
+        <Router>
+          <Nav icon='AVInstrumentsandControls' l1='Home' l2='Products' l3='Learn More' quantity='(2)' />
+          {/* <Home title='AVIC'/> */}
+          {/* <Products/> */}
+          <Routes>
+            <Route path='/Home' element={<Home />} />
+            <Route path='/ProductPage' element={<ProductPage />} />
+            <Route path='/LearnMore' element={<LearnMore />} />
+            <Route path='/RegPage' element={<Reg />} />
+            <Route path='/LoginPage' element={<Login />} />
+            <Route path='/ProductDetails' element={<ProductDetails />} />
+            <Route path='Payment' element={<Payment />} />
+            <Route path='/TestingPage' element={<TestingPage />} />
+            <Route path='/Mail' element={<Mail />} />
+            <Route path='/Admin' element={<Admin />} />
+            <Route path='ULogin' element={<ULogin />} />
+            <Route path='/ALogin' element={<ALogin />} />
+            <Route path='/Cart' element={<Cart />} />
+            <Route path='/Accounts' element={
+              <Protected>
+                <Accounts />
+              </Protected>}
+            />
+          </Routes>
 
-    </Router>
+          <Footer l1='Contact Us' />
+        </Router>
+      </AuthContextProvider>
     </>
   );
 }
