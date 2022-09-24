@@ -5,7 +5,7 @@ import { db, UserAuth } from '../firebase-config';
 const Protected = ({ children }) => {
   const { user } = UserAuth();
   if (!user) {
-    return <Navigate to='/  ' />;
+    return <Navigate to='/' />;
   }
 
   return children;
