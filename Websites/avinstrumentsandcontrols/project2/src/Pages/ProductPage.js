@@ -7,7 +7,7 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import useNavigate from 'react-router';
 import Products from '../components/Products';
-import { collection,doc, getDocs, addDoc, deleteDoc,updateDoc , firebase} from 'firebase/firestore';
+import { collection, doc, getDocs, addDoc, deleteDoc, updateDoc, firebase } from 'firebase/firestore';
 import { db } from '../firebase-config';
 import { Link, useNavigate } from 'react-router-dom';
 import pic1 from '../imgs/p1.jpg';
@@ -34,11 +34,11 @@ const ProductPage = () => {
 
   const [cart, setCart] = useState([]);
 
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
-  const updateItem= async(id,q)=>{
+  const updateItem = async (id, q) => {
     const itemDoc = doc(db, "inventory", id);
-    const newFields = { quantity:q  - 1 };
+    const newFields = { quantity: q - 1 };
     console.log(newFields);
     await updateDoc(itemDoc, newFields);
     navigate("/Cart");
@@ -71,13 +71,13 @@ const ProductPage = () => {
               return (
                 <div className="">
                   {/* -   Name : <b>{item.pname}</b> */}
-                  <Products imgsrc={pic1}
+                  <Products imgsrc={item.img}
                     name={item.pname}
                     cost={item.cost}
                     quantity={item.quantity}
                   />
                   {" "}
-                  <Button className='links' onClick={()=>{updateItem(item.id,item.quantity)}} variant="primary" size='lg'>
+                  <Button className='links' onClick={() => { updateItem(item.id, item.quantity) }} variant="primary" size='lg'>
                     {/* <Link  className='links'>Add to Cart</Link> */}Add to Cart
                   </Button>
                   {" "}
