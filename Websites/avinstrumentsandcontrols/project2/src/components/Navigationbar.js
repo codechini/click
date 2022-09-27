@@ -22,16 +22,6 @@ import { AiOutlineUserAdd } from 'react-icons/ai';
 
 const Navigationbar = (props) => {
 
-  const { user, logOut } = UserAuth();
-
-  const handleSignOut = async () => {
-    try {
-      await logOut()
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
   return (
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -56,18 +46,15 @@ const Navigationbar = (props) => {
               <Link to='/LoginPage' className="btn btn-outline text-white">
                 <CgLogIn size='24px' />&nbsp; {props.login}
                 <div className='carttxt'>
-                  {user?.displayName ? (
-                    <button onClick={handleSignOut}>Logout</button>
-                  ) : (
-                    <Link to='/ULogin '>Sign in</Link>
-                  )}
+                  <button >Logout</button>
+                  <Link to='/ULogin'>Sign in</Link>
                 </div>
               </Link>
 
-              <a href="" className="btn btn-outline text-white">
+              <Link to='/Cart' className="btn btn-outline text-white">
                 <FaCartPlus size='24px' />&nbsp; {props.quantity}
                 <div className='carttxt'>Add to Cart</div>
-              </a>
+              </Link>
             </div>
           </Navbar.Collapse>
         </Container>

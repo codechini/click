@@ -20,8 +20,9 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductPage from '../Pages/ProductPage';
 import { Link } from 'react-router-dom';
-import { db, UserAuth } from '../firebase-config';
+import { db } from '../firebase-config';
 import { FirebaseError } from 'firebase/app';
+import GoogleLogin from 'react-google-login';
 
 const ULogin = () => {
 
@@ -31,7 +32,6 @@ const ULogin = () => {
   const [user, setUser] = useState({});
   const userCollectionRef = collection(db, "client");
 
-  const { googleSignIn, users } = UserAuth();
   const navigate = useNavigate();
 
   // const auth = getAuth();
@@ -49,77 +49,11 @@ const ULogin = () => {
   //   getUsers();
   // }, []);
 
-  // const navigate = useNavigate();
-
-  // const login = async (e) => {
-  //   e.preventDefault();
-  //   const empasschk = collection(db, "client");
-  //   let admin = query(empasschk, where("privilage", "==", true));
-  //   let em = query(empasschk, where("email", "==", user.newEmail));
-  //   let ps = query(empasschk, where("passwd", "==", user.newPswd));
-
-  //   onSnapshot(admin, (snapshot) => {
-  //     let cLient = [];
-  //     snapshot.docs.forEach((doc) => {
-  //       cLient.push({ ...doc.data(), id: doc.id })
-  //     })
-  //     console.log(cLient);
-  //     if (cLient.exists) {
-  //       navigate("/Admin");
-  //     }
-  //   })
-
-  //   onSnapshot(em, (snapshot) => {
-  //     let eMail = [];
-  //     snapshot.docs.forEach((doc) => {
-  //       eMail.push({ ...doc.data(), id: doc.id })
-  //     })
-  //     console.log(eMail);
-  //     if (eMail.exists) {
-  //       navigate("/ProductPage");
-  //     }
-  //   })
-
-  //   onSnapshot(ps, (snapshot) => {
-  //     let pAsswd = [];
-  //     snapshot.docs.forEach((doc) => {
-  //       pAsswd.push({ ...doc.data(), id: doc.id })
-  //     })
-  //     console.log(pAsswd);
-  //     if (snapshot.exists) {
-  //       navigate("/ProductPage");
-  //     }
-  //   })
-
-  // }
-
-  // const logout = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     signOut(auth)
-  //       .catch(function (error) {
-  //         console.log(error.code);
-  //         console.log(error.message);
-  //       });
-  //     navigate("/Home");
-  //   } catch (error) {
-  //     setErrors(error.message);
+  // useEffect(() => {
+  //   if (user != null) {
+  //     navigate('/Accounts');
   //   }
-  // }
-
-  const handleGoogleSignIn = async () => {
-    try {
-      await googleSignIn();
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    if (user != null) {
-      navigate('/Accounts');
-    }
-  }, [users]);
+  // }, [users]);
 
 
 
@@ -134,12 +68,12 @@ const ULogin = () => {
             <Form.Control
               required
               autoComplete='off'
-              value={user.newEmail}
+              value={newEmail}
               placeholder="Enter Email"
               pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
               onChange={
                 (e) => {
-                  user(e.target.value)
+                  setnewEmail(e.target.value)
                 }}
             />
             <Form.Control.Feedback>
@@ -157,7 +91,7 @@ const ULogin = () => {
               placeholder="Enter Password"
               onChange={
                 (e) => {
-                  const newPswd = e.target.value;
+                  setnewPswd(e.target.value)
                 }}
             />
             <Form.Text className="text-muted">
@@ -185,7 +119,10 @@ const ULogin = () => {
               </Col>
             </Row>
           </Container>
-          <GoogleButton onClick={handleGoogleSignIn} />
+          <GoogleLogin
+            clientId={process.env.REACT_APP_GOOGLE_ID}
+            buttonText='Login with google'>
+          </GoogleLogin>
         </Form>
       </div>
     </>
