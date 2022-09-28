@@ -32,17 +32,18 @@ const ProductPage = () => {
     getItems();
   }, []);
 
-  const [cart, setCart] = useState([]);
+
 
   const navigate = useNavigate();
 
   const updateItem = async (id, q) => {
-    const itemDoc = doc(db, "inventory", id);
-    const newFields = { quantity: q - 1 };
-    console.log(newFields);
-    await updateDoc(itemDoc, newFields);
+    // const itemDoc = doc(db, "inventory", id);
+    // const newFields = { quantity: q - 1 };
+    // console.log(newFields);
+    // await updateDoc(itemDoc, newFields);    
     navigate("/Cart");
   }
+
 
 
   return (
@@ -70,7 +71,6 @@ const ProductPage = () => {
             {item.map((item) => {
               return (
                 <div className="">
-                  {/* -   Name : <b>{item.pname}</b> */}
                   <Products imgsrc={item.img}
                     name={item.pname}
                     cost={item.cost}

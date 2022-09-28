@@ -19,6 +19,7 @@ const Admin = () => {
   const [q, newQ] = useState(0);
   const [pcost, newCost] = useState(0);
   const [document, newDoc] = useState("");
+  const [images, newImages] = useState();
 
   const [showAdd, setShowAdd] = useState(false);
   const [showUpdate, setShowUpdate] = useState(false);
@@ -46,7 +47,8 @@ const Admin = () => {
         pname: name,
         quantity: Number(q),
         cost: Number(pcost),
-        docs: document
+        docs: document,
+        img: images,
       }, { merge: true });
     setShowAdd(true);
   }
@@ -74,10 +76,6 @@ const Admin = () => {
     <>
       <Alert show={showAdd} variant='success'>
         Added
-      </Alert>
-
-      <Alert show={showDelete} variant='danger'>
-        Deleted
       </Alert>
       <div className="container">
 
@@ -135,6 +133,7 @@ const Admin = () => {
                   <Form.Control
                     required
                     className='inpt'
+                    // type='file'
                     autoComplete='off'
                     pattern='[0-9]+(\\.[0-9][0-9]?)?'
                     onChange={(event) => {
@@ -157,6 +156,9 @@ const Admin = () => {
           <div className="container">
             <Alert show={showUpdate} variant='primary'>
               Updated
+            </Alert>
+            <Alert show={showDelete} variant='danger'>
+              Deleted
             </Alert>
             {item.map((item) => {
               return (

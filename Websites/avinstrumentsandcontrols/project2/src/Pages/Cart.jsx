@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db, storage } from '../firebase-config';
+import Products from '../components/Products';
 
 const Cart = () => {
 
@@ -23,6 +24,22 @@ const Cart = () => {
 
   return (
     <div>
+
+      <div className="container">
+        {item.map((item) => {
+          return (
+            <div className="">
+              <Products imgsrc={item.img}
+                name={item.pname}
+                cost={item.cost}
+                quantity={item.quantity}
+              />
+            </div>
+          )
+        })}
+      </div>
+
+
       <div className='container my-5'>
         {item.map((item) => {
           return (
