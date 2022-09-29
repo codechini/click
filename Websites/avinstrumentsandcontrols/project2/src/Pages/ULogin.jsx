@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { firebase, signInWithEmailAndPassword, signOut, updateCurrentUser, onAuthStateChanged } from "firebase/auth";
-import { auth } from '../firebase-config';
+import { auth, db, provider, signInWithGoogle } from '../firebase-config';
 import { collection, doc, query, where, getDoc, getDocs, addDoc, onSnapshot, snapshot } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
-import { GoogleButton } from 'react-google-button';
 
 import {
   // NavDropdown,
@@ -20,7 +18,6 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductPage from '../Pages/ProductPage';
 import { Link } from 'react-router-dom';
-import { db } from '../firebase-config';
 import { FirebaseError } from 'firebase/app';
 import GoogleLogin from 'react-google-login';
 
@@ -31,31 +28,6 @@ const ULogin = () => {
   const [newPswd, setnewPswd] = useState("");
   const [user, setUser] = useState({});
   const userCollectionRef = collection(db, "client");
-
-  const navigate = useNavigate();
-
-  // const auth = getAuth();
-
-
-  // useEffect(() => {
-
-  //   const getUsers = async () => {
-  //     const clientData = await getDocs(userCollectionRef);
-  //     setUser(clientData.docs.map((doc) => ({
-  //       ...doc.data(), id: doc.id
-  //     })
-  //     ));
-  //   }
-  //   getUsers();
-  // }, []);
-
-  // useEffect(() => {
-  //   if (user != null) {
-  //     navigate('/Accounts');
-  //   }
-  // }, [users]);
-
-
 
 
   return (
@@ -119,10 +91,11 @@ const ULogin = () => {
               </Col>
             </Row>
           </Container>
-          <GoogleLogin
+          {/* <GoogleLogin
             clientId={process.env.REACT_APP_GOOGLE_ID}
             buttonText='Login with google'>
-          </GoogleLogin>
+          </GoogleLogin> */}
+          <button onClick={signInWithGoogle}>Sign in with Google</button>
         </Form>
       </div>
     </>

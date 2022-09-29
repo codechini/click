@@ -13,7 +13,7 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-import { db, UserAuth } from '../firebase-config';
+import { db, UserAuth, signInWithGoogle, auth } from '../firebase-config';
 
 import { FaCartPlus } from 'react-icons/fa';
 import { CgLogIn } from 'react-icons/cg';
@@ -22,6 +22,8 @@ import { AiOutlineUserAdd } from 'react-icons/ai';
 
 const Navigationbar = (props) => {
 
+
+  console.log(localStorage.getItem('name'))
   return (
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -46,8 +48,12 @@ const Navigationbar = (props) => {
               <Link to='/LoginPage' className="btn btn-outline text-white">
                 <CgLogIn size='24px' />&nbsp; {props.login}
                 <div className='carttxt'>
-                  <button >Logout</button>
-                  <Link to='/ULogin'>Sign in</Link>
+                  {localStorage.getItem("name")}<br />
+                  {auth ? (
+                    <Link to='/ULogin'>Logout</Link>
+                  ) : (
+                    <Link to='/ULogin'>Sign in</Link>
+                  )}
                 </div>
               </Link>
 
