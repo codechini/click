@@ -20,6 +20,7 @@ import ProductPage from '../Pages/ProductPage';
 import { Link } from 'react-router-dom';
 import { FirebaseError } from 'firebase/app';
 import GoogleLogin from 'react-google-login';
+import { FcGoogle } from 'react-icons/fc';
 
 const ULogin = () => {
 
@@ -95,7 +96,12 @@ const ULogin = () => {
             clientId={process.env.REACT_APP_GOOGLE_ID}
             buttonText='Login with google'>
           </GoogleLogin> */}
-          <button onClick={signInWithGoogle}>Sign in with Google</button>
+          <Container>
+            <button className='btn' onClick={signInWithGoogle}>
+              <FcGoogle size='24px' />
+              Sign in with Google
+            </button>
+          </Container>
         </Form>
       </div>
     </>
