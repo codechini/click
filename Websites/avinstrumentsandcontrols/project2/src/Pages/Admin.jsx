@@ -9,6 +9,7 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { db } from '../firebase-config';
 import { collection, doc, getDocs, addDoc, deleteDoc, updateDoc, firebase } from 'firebase/firestore';
+import PDFAdmin from './PDFAdmin';
 
 const Admin = () => {
 
@@ -69,7 +70,9 @@ const Admin = () => {
     window.location.reload(true);
   }
 
+  const salesReport = () => {
 
+  }
 
 
   return (
@@ -187,6 +190,9 @@ const Admin = () => {
             )
           })}
 
+        </div>
+        <div className="container">
+          <PDFAdmin />
         </div>
       </div>
     </>

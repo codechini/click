@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { collection, doc, getDocs, addDoc, deleteDoc, updateDoc, firebase } from 'firebase/firestore';
+import { db, auth } from '../firebase-config';
 
 const Payment = () => {
 
@@ -23,6 +25,10 @@ const Payment = () => {
   console.log(xq);
 
   const buyProduct = async (id, quantity, name, cost) => {
+    const itemDoc = doc(db, "inventory", id);
+    const newFields = { quantity: quantity - 1 };
+    console.log(newFields);
+    await updateDoc(itemDoc, newFields);
     navigate("/Ordered", { state: { id: id, quantity: quantity, name: name, cost: cost } });
   }
 
@@ -32,7 +38,7 @@ const Payment = () => {
         <Row>
           <Col>
             <div className=" px-0">
-              <Form className='justify-items-center needs-validation' onSubmit={() => { buyProduct(xid, xq, xname, xcost) }}>
+              <Form className='justify-items-center needs-validation' >
                 <span className='regTitle'>Enter Card Details :-</span>
                 <Form.Group className="mb-2 d-flex" controlId="formBasicText">
                   <Form.Label>Enter Card no.:&nbsp;</Form.Label>
@@ -75,7 +81,7 @@ const Payment = () => {
 
                 </Form.Group>
                 <Form.Group className="mb-2 d-flex" controlId="formBasicText">
-                  <Form.Label>Product Docs :&nbsp;</Form.Label>
+                  <Form.Label>Exipry date :&nbsp;</Form.Label>
                   <Form.Control
                     required
                     className='inpt'
@@ -87,7 +93,7 @@ const Payment = () => {
                   />
                 </Form.Group>
                 <div className="container">
-                  <Button className='btnReg mx-2' variant="primary" type="submit">
+                  <Button onClick={() => { buyProduct(xid, xq, xname, xcost) }} className='btnReg mx-2' variant="primary" >
                     Checkout
                   </Button>
                   {/* <Button className='btnReg mx-2' variant="primary" type="submit">

@@ -39,10 +39,10 @@ const Cart = () => {
 
   const navigate = useNavigate();
   const updateItem = async (id, q, name, cost) => {
-    const itemDoc = doc(db, "inventory", xid);
-    const newFields = { quantity: xq - 1 };
-    console.log(newFields);
-    await updateDoc(itemDoc, newFields);
+    // const itemDoc = doc(db, "inventory", xid);
+    // const newFields = { quantity: xq - 1 };
+    // console.log(newFields);
+    // await updateDoc(itemDoc, newFields);
 
     navigate("/Payment", { state: { id: id, quantity: q, name: name, cost: cost } });
   }
