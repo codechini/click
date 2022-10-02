@@ -1,5 +1,4 @@
 import React from 'react';
-import App from '../App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   Navbar,
@@ -8,17 +7,15 @@ import {
 } from 'react-bootstrap';
 
 import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
   Link
 } from 'react-router-dom';
-import { db, UserAuth, signInWithGoogle, auth } from '../firebase-config';
+import { auth, signOutWithGoogle } from '../firebase-config';
 
 import { FaCartPlus } from 'react-icons/fa';
 import { CgLogIn } from 'react-icons/cg';
 import { AiOutlineUserAdd } from 'react-icons/ai';
 
+console.log(auth);
 
 const Navigationbar = (props) => {
 
@@ -45,17 +42,37 @@ const Navigationbar = (props) => {
                 <AiOutlineUserAdd size='24px' />&nbsp; {props.register}
                 <div className='carttxt'>Register</div>
               </Link>
+
+
+
+
+
+              {/* <Link to='/LoginPage' className="btn btn-outline text-white">
+                <CgLogIn size='24px' />&nbsp; {props.login}
+                <div className='carttxt'>
+                  {localStorage.getItem("name")}<br />
+                  <Link to='/ULogin'>Sign in</Link>
+                  <Link onClick={() => { signOutWithGoogle() }} to='/ULogin'>
+                    Logout
+                  </Link>
+                </div>
+              </Link> */}
+
               <Link to='/LoginPage' className="btn btn-outline text-white">
                 <CgLogIn size='24px' />&nbsp; {props.login}
                 <div className='carttxt'>
                   {localStorage.getItem("name")}<br />
                   {auth ? (
-                    <Link to='/ULogin'>Logout</Link>
+                    <Link onClick={() => { signOutWithGoogle() }} to='/ULogin'>
+                      Logout
+                    </Link>
                   ) : (
                     <Link to='/ULogin'>Sign in</Link>
                   )}
                 </div>
               </Link>
+
+
 
               <Link to='/Cart' className="btn btn-outline text-white">
                 <FaCartPlus size='24px' />&nbsp; {props.quantity}

@@ -2,17 +2,11 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "@firebase/firestore";
 import {
   getAuth,
-  createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
-  signInWithRedirect,
   signOut,
-  onAuthStateChanged,
-  getRedirectResult,
 } from "firebase/auth";
-import { getStorage, ref } from "firebase/storage";
-
-import { useContext, createContext, useEffect, useState } from 'react';
+import { getStorage } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 
 const firebaseConfig = {
@@ -31,18 +25,29 @@ export const db = getFirestore(app);
 export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider(app);
 export const storage = getStorage(app);
+
+
 export const signInWithGoogle = () => {
   signInWithPopup(auth, provider).then((result) => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const name = result.user.displayName;
     const profilePic = result.user.ProfilePic;
-    console.log(name);
+    // console.log(name);
     localStorage.setItem("name", name);
     localStorage.setItem("profilePic", profilePic);
-    navigate('/RegPage');
+    // navigate('/RegPage');
     window.location.reload(true);
   }).catch(error => console.log(error))
 }
 
+export const signOutWithGoogle = () => {
+  signOut(auth).then(() => {
+    // const navigate = useNavigate();
+    // navigate('/Ulogin');
 
+    localStorage.clear();
+    window.location.reload(true);
+    console.log("Signed Out");
+  }).catch(error => console.log(error));
+}
 // --------------------------------------------

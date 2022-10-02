@@ -32,6 +32,8 @@ import Cart from './Pages/Cart';
 // import { AuthContextProvider } from './firebase-config';
 import Accounts from './Pages/Accounts';
 import Protected from './Pages/Protected';
+import Ordered from './Pages/Ordered';
+import PDF from './Pages/PDF';
 
 function App() {
   return (
@@ -54,10 +56,9 @@ function App() {
           <Route path='ULogin' element={<ULogin />} />
           <Route path='/ALogin' element={<ALogin />} />
           <Route path='/Cart' element={<Cart />} />
-          <Route path='/Accounts' element={
-            <Accounts />
-          }
-          />
+          <Route path='/Accounts' element={<Accounts />} />
+          <Route path='/Ordered' element={<Ordered />} />
+          <Route path='/Ordered' element={<PDF />} />
         </Routes>
 
         <Footer l1='Contact Us' />

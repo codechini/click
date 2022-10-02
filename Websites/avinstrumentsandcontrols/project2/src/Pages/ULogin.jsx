@@ -1,25 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { auth, db, provider, signInWithGoogle } from '../firebase-config';
-import { collection, doc, query, where, getDoc, getDocs, addDoc, onSnapshot, snapshot } from 'firebase/firestore';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { auth, db, signInWithGoogle } from '../firebase-config';
+import { collection } from 'firebase/firestore';
 
 import {
-  // NavDropdown,
-  // Navbar,
-  // Nav,
-  // Form,
   Container,
-  // Button,
   Form,
   Row,
   Col,
   Alert
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ProductPage from '../Pages/ProductPage';
 import { Link } from 'react-router-dom';
-import { FirebaseError } from 'firebase/app';
-import GoogleLogin from 'react-google-login';
 import { FcGoogle } from 'react-icons/fc';
 
 const ULogin = () => {
@@ -41,7 +32,6 @@ const ULogin = () => {
             <Form.Control
               required
               autoComplete='off'
-              value={newEmail}
               placeholder="Enter Email"
               pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
               onChange={
@@ -60,7 +50,6 @@ const ULogin = () => {
             <Form.Control
               required
               autoComplete='off'
-              value={user.newPswd}
               placeholder="Enter Password"
               onChange={
                 (e) => {
@@ -92,12 +81,8 @@ const ULogin = () => {
               </Col>
             </Row>
           </Container>
-          {/* <GoogleLogin
-            clientId={process.env.REACT_APP_GOOGLE_ID}
-            buttonText='Login with google'>
-          </GoogleLogin> */}
           <Container>
-            <button className='btn' onClick={signInWithGoogle}>
+            <button className='' onClick={signInWithGoogle}>
               <FcGoogle size='24px' />
               Sign in with Google
             </button>

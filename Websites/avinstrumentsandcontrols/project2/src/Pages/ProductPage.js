@@ -8,10 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import useNavigate from 'react-router';
 import Products from '../components/Products';
 import { collection, doc, getDocs, addDoc, deleteDoc, updateDoc, firebase } from 'firebase/firestore';
-import { db } from '../firebase-config';
+import { db, auth } from '../firebase-config';
 import { Link, useNavigate } from 'react-router-dom';
-import pic1 from '../imgs/p1.jpg';
-import pic3 from '../imgs/p3.jpg';
 
 
 const ProductPage = () => {
@@ -36,15 +34,14 @@ const ProductPage = () => {
 
   const navigate = useNavigate();
 
-  const updateItem = async (id, q) => {
+  const updateItem = async (id, name, q, img, cost) => {
     // const itemDoc = doc(db, "inventory", id);
     // const newFields = { quantity: q - 1 };
     // console.log(newFields);
     // await updateDoc(itemDoc, newFields);    
-    navigate("/Cart");
+    console.log(id, q, name, img, cost);
+    navigate("/Cart", { state: { id: id, name: name, quantity: q, image: img, cost: cost } });
   }
-
-
 
   return (
     <>
@@ -77,13 +74,19 @@ const ProductPage = () => {
                     quantity={item.quantity}
                   />
                   {" "}
-                  <Button className='links' onClick={() => { updateItem(item.id, item.quantity) }} variant="primary" size='lg'>
-                    {/* <Link  className='links'>Add to Cart</Link> */}Add to Cart
+                  <Link className='links' to='/ULogin'>Please Login</Link>
+                  <Button className='links' onClick={() => { updateItem(item.id, item.pname, item.quantity, item.img, item.cost) }} variant="primary" size='lg'>
+                    Add to Cart
                   </Button>
+
+
+                  {/* <Link className='links' to='/ULogin'>Please Login</Link> */}
+
                   {" "}
                   <Button variant="primary" size='lg'>
                     <Link className='links' to='/ProductDetails'>View Details</Link>
                   </Button>
+                  {/* <Link  className='links'>Add to Cart</Link> */}
                 </div>
               )
             })}
