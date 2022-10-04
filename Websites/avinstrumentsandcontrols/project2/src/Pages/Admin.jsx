@@ -163,19 +163,21 @@ const Admin = () => {
             <Alert show={showDelete} variant='danger'>
               Deleted
             </Alert>
-            {item.map((item) => {
+            {item.map((item, i) => {
               return (
                 <>
                   {" "}
-                  <h3>Name: {item.pname}</h3>
-                  <h3>Quantity: {item.quantity}</h3>
-                  <Button onClick={() => { deleteItem(item.id) }} className='btnReg ' variant="primary" type="submit">
-                    Delete
-                  </Button>
-                  {" "}
-                  <Button onClick={() => { updateItem(item.id, item.quantity) }} className='btnReg mx-2' variant="primary" type="submit">
-                    Update
-                  </Button>
+                  <Col>
+                    <h3>Name: {item.pname}</h3>
+                    <h3>Quantity: {item.quantity}</h3>
+                    <Button onClick={() => { deleteItem(item.id) }} className='btnReg ' variant="primary" type="submit">
+                      Delete
+                    </Button>
+                    {" "}
+                    <Button onClick={() => { updateItem(item.id, item.quantity) }} className='btnReg mx-2' variant="primary" type="submit">
+                      Update
+                    </Button>
+                  </Col>
                 </>
               )
             })}
