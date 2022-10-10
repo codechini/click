@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import ftrImg from '../imgs/footer_img.png'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <div style={{ backgroundImage: `url($(ftrImg))` }}>
+
+      Chinmay
+    </div>
   )
 }
 
