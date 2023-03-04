@@ -1,0 +1,13 @@
+*{
+  background-color: rgba(60, 128, 255, 0.05);
+  font-family: 'Raleway', sans-serif;
+  font-size: 22px;
+    
+}
+
+.myc{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
