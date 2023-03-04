@@ -1,0 +1,11 @@
+html{
+  background-color: rgb(232, 249, 253 );
+  padding: 0px 50px;
+  font-size: 36px;
+  max-width: 100%;
+}
+
+.title{
+  text-align: center;
+  color: rgb(33, 85, 205);
+}
