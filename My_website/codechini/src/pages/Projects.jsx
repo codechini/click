@@ -4,7 +4,7 @@ const Projects = () => {
   return (
     <>
       <section className='sect'>
-        AvinstrumentsandControls
+        <p>AvinstrumentsandControls</p>
       </section>
     </>
   )
