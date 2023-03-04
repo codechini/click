@@ -3,10 +3,11 @@ import ftrImg from '../imgs/footer_img.png'
 
 const Footer = () => {
   return (
-    <div style={{ backgroundImage: `url($(ftrImg))` }}>
-
-      Chinmay
-    </div>
+    <>
+      <div className='ftr'>
+        <p>Chinmay</p>
+      </div>
+    </>
   )
 }
 
