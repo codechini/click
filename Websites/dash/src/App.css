@@ -1,38 +1,222 @@
-.App {
+*{
+  font-family: 'Unbounded', cursive;
+  font-size: 24px;
+  background-color: rgba(87, 87, 245,1);
+  margin: 0px;
+  padding: 0px;
+}
+
+.navbar{
+  display: flex;
+  align-items:flex-end;
+  justify-content: flex-end;
+  padding: 10px;
+  font-size: 20px;
+  font-weight:100;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: rgb(254, 197, 99);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+a:hover{
+  color: rgba(254, 197, 99, 0.797);
+}
+.align{
+  display: flex;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 0;
+}
+.btn{
+  background-color: rgba(254, 197, 99, 0.797);
+  color: rgba(87, 87, 245,1);
+  justify-content: center;
+  text-align: center;
+  padding: 5px 15px 5px 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+.card{
+  background-color: inherit;
+  display: flex;
+  max-width: 100%;
+  justify-content: center;
+  text-align: center;
+  text-align: center;
+  height: auto;
+  padding: 0px 10px;
+  border: 0;
+}
+.cardin{
+  height: auto;
+  width: 357px;
+}
+
+.menu{
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+.card-accepter{
+  display: block;
+  color: rgb(254, 197, 99);
+  font-size: 30px;
+}
+.txt{
+  color: rgb(254, 197, 99);
+  text-align: start;
+}
+.center_it{
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.inpt{
+  background-color: aliceblue;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-radius: 6px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.dimension-mobile{
+  width: 100%;
+  border-radius: 5px 5px;
+  border: 5px black;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.dimension-desktop{
+  width: 100%;
+  border-radius: 5px;
+}
+.page-products1{
   display: flex;
-  flex-direction: column;
+  justify-content: end;
   align-items: center;
+  max-width: 100%;
+  height: 80vh;
+  padding-right: 105px;
+  padding-bottom: 2rem;
+}
+.page-products2{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  max-width: 100%;
+  height: 80vh;
+  padding-left: 105px;
+  padding-bottom: 2rem;
+}
+.page-products-frame{
+  width: 25%;
+  height: 100%;
+}
+/* .go-back{
+  
+} */
+.img-section{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
-
-.App-link {
-  color: #61dafb;
+.img-dash{
+  display: flex;
+  height: 300px;
+  width: 300px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.about-dash{
+  color: rgba(254, 197, 99, 0.7);
+  text-decoration:solid;
+  font-size: 32px;
+  display: flex;
+  max-width: 100%;
+  text-align: start;
+  justify-content: start;
+  align-items: center;
+  padding: 30px 510px 10px 50px;
+}
+@media screen and (max-width:480px)  {
+  .about-dash{
+    display: flex;
+    padding: 30px 10px 10px 10px;
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+  .page-products-frame{
+    width: 100%;
+    height: 100%;
+  }
+  .page-products1{
+    padding: 1rem 10px;
+  }
+  .page-products2{
+    padding: 1rem 10px;
+  }
+  .cardin{
+    height: 170px;
+    width: 335px;
+  }
+  .dimension-desktop{
+    width: 100%;
+    display: none;
+  }
+}
+@media screen and (min-width:480px)  {
+  .about-dash{
+    padding: 30px 250px 10px 50px;
+  }
+  .page-products-frame{
+    width: 75%;
+    height: 100%;
+  }
+  .page-products1{
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+  .page-products2{
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+  .dimension-mobile{
+    width: 100%;
+    display: none;
+  }
+}
+@media screen and (min-width:1440px)  {
+  .about-dash{
+    padding: 30px 510px 10px 50px;
+  }
+  .page-products1{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    max-width: 100%;
+    height: 80vh;
+    padding-right: 105px;
+    padding-bottom: 2rem;
+  }
+  .page-products2{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    max-width: 100%;
+    height: 80vh;
+    padding-left: 105px;
+    padding-bottom: 2rem;
+  }
+  .page-products-frame{
+    width: 30%;
+    height: 100%;
+  }
+  .dimension-mobile{
+    width: 100%;
+    display: none;
   }
 }
