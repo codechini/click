@@ -1,38 +1,91 @@
-.App {
+*{
+  background-color: rgba(135, 202, 250,0.2);
+  font-size: 24px;
+  margin: 0px;
+  padding: 0px;
+}
+/* .navbar{
+  display: flex;
+  align-items:flex-end;
+  justify-content: flex-end;
+  padding: 10px;
+  font-size: 20px;
+  font-weight:100;
+} */
+
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: rgb(37, 130, 254);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+a:hover{
+  color: rgba(254, 197, 99, 0.797);
+}
+.alignc{
+  display: flex;
+  height:auto;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.aligns{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: auto;
+  justify-content: start;
+  align-items: flex-start;
+  text-align: start;
+}
+.btn{
+  background-color: rgba(254, 197, 99, 0.797);
+  color: rgba(87, 87, 245,1);
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  padding: 5px 15px 5px 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+.menu{
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+.txt{
+  color: rgb(254, 197, 99);
+  text-align: start;
+}
+.img-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-genie{
+  display: flex;
+  height: 300px;
+  width: 300px;
+}
+.inpt{
+  background-color: aliceblue;
+  /* display: flex;
+  justify-content: start;
+  align-items: flex-start; */
+  text-align: start;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-radius: 6px;
 }
 
-.App-link {
-  color: #61dafb;
+.qrcode{
+  background-image: url("../src/imgs/Mobile.svg");
+  background-repeat: no-repeat;
+  top: 0;
+  width: 355px;
+  height: 200px;
+  overflow: hidden;
+  
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.qrcode >.example::-webkit-scrollbar {
+  display: none;
 }
