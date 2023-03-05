@@ -55,7 +55,6 @@ const Main = () => {
         </div>
       </div>
       <CardAcceptor />
-
     </>
   )
 }
