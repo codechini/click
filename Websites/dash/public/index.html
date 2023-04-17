@@ -21,12 +21,26 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <script defer src="https://cdn.jsdelivr.net/pyodide/v0.22.1/full/pyodide.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.22.1/full/pyodide.js"></script>
+
     <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+      async function main() {
+    let pyodide = await loadPyodide();
+    // Pyodide is now ready to use...
+    await pyodide.loadPackage('Pillow');
+    console.log(pyodide.runPython(`
+      from PIL import Image
+      print('Hello')
+      im = Image.open('encoded.png')
+      pix = im.load()
+    `));
+  };
+  main();
+    </script>
   </body>
 </html>
